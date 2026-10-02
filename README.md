@@ -1,5 +1,11 @@
 # AI System Prompts for Families
 
+Most AI agents, LLMs and chatbots are built to be extremely helpful employees that work tirelessly and independently to get a job done for their boss (the user).
+
+For kids using the same tools, they're getting the same treatment.
+
+Here's what the actual system prompts for ChatGPT, Claude and Gemini each say for each session, and here are suggestions for meta-prompts that families and educators can insert in as overrides that help tune those same systems to be valuable tools for kids.
+
 **Prompts, tests and plain-English guides that help kids use AI to learn, instead of having AI do the learning for them.**
 
 ChatGPT, Gemini and Claude are built to be great employees for busy adults: answer fast, don't ask too many questions, do the whole job. That is exactly right at work. For a kid who is learning, it's backwards. The questions, the struggle and the decisions *are* the learning.
@@ -66,6 +72,4 @@ Found a prompt that passes more tests? A situation we missed? A system prompt th
 
 ## About
 
-Made by [Screenwise](https://screenwiseapp.com), which helps parents make confident decisions about their kids' digital lives. For the longer argument behind this repo, read [Schools should teach tech, and be slow to teach with it](https://screenwiseapp.com/tech-in-schools).
-
-Our prompts and guides are licensed [CC BY 4.0](LICENSE.md): copy them, change them, share them, and say where they came from. The system prompt excerpts belong to their companies; see [LICENSE.md](LICENSE.md).
+Our prompts and guides are open source [CC BY 4.0](LICENSE.md): copy them, change them, share them, and say where they came from. The system prompt excerpts belong to their companies; see [LICENSE.md](LICENSE.md).
