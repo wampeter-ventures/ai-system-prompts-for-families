@@ -42,6 +42,7 @@ These system prompts are full of technical jargon and nuanced coding instruction
 | Folder | What's in it |
 |---|---|
 | [`prompts/`](prompts/) | Instructions to paste into a chatbot: [kids 6–11](prompts/kids-6-to-11.md), [teens 12–17](prompts/teens-12-to-17.md), [teachers](prompts/classroom-assistant.md), and [add-ons](prompts/add-ons.md) for homework, math, writing, reading and more |
+| [`evals/`](evals/) | The test bench: real chats with Gemini, graded by use case, and [how the prompts got better](evals/HISTORY.md) |
 | [`how-to/`](how-to/) | [Where to paste them](how-to/set-up.md) in ChatGPT, Gemini and Claude, and [how to test them](how-to/test-it.md) the way a kid would |
 | [`what-the-ai-is-told/`](what-the-ai-is-told/) | Condensed copies of the [Claude](what-the-ai-is-told/claude.md), [Gemini](what-the-ai-is-told/gemini.md) and [ChatGPT](what-the-ai-is-told/chatgpt.md) system prompts, word for word, with a [plain-English summary](what-the-ai-is-told/README.md) |
 
