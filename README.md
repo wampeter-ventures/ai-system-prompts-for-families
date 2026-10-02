@@ -1,4 +1,4 @@
-# AI System Prompts for Families
+# ChatGPT is designed to be an incredible employee who gets work done — here's what that means for kids using the same tool that lawyers, engineers, designers, product managers and other adults use
 
 Most AI agents, LLMs and chatbots are built to be extremely helpful employees that work tirelessly and independently to get a job done for their boss (the user).
 
