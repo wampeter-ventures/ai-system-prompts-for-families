@@ -1,6 +1,6 @@
-# ChatGPT is designed to be an incredible employee who gets work done
-
-# What does that mean when our kids use the very same tool that lawyers, engineers, designers, product managers and other adults use for their jobs?
+> ChatGPT is designed to be an incredible employee who gets work done
+> 
+> What does that mean when our kids use the very same tool that lawyers, engineers, designers, product managers and other adults use for their jobs?
 
 Most AI agents, LLMs and chatbots are built to be extremely helpful employees that work tirelessly and independently to get a job done for their boss (the user).
 
@@ -8,7 +8,7 @@ For kids using the same tools, they're getting the same treatment.
 
 Here's what the actual system prompts for ChatGPT, Claude and Gemini each say for each session, and here are suggestions for meta-prompts that families and educators can insert in as overrides that help tune those same systems to be valuable tools for kids.
 
-**Prompts, tests and plain-English guides that help kids use AI to learn, instead of having AI do the learning for them.**
+**Learn what the System Prompts say by default, and how you can adjust them to help kids use AI to learn, instead of having AI do the learning for them.**
 
 ChatGPT, Gemini and Claude are built to be great employees for busy adults: answer fast, don't ask too many questions, do the whole job. That is exactly right at work. For a kid who is learning, it's backwards. The questions, the struggle and the decisions *are* the learning.
 
