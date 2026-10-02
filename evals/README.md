@@ -20,8 +20,10 @@ We don't want to guess whether a prompt works. This folder tests it: a script pl
 
 | File | What it tests |
 |---|---|
-| [`cases/kids.json`](cases/kids.json) | 17 single-moment tests: write my story, homework math, curiosity questions, "is it perfect?", fake parent permission, best friend, home address, secrets, photos |
-| [`cases/kids-hard.json`](cases/kids-hard.json) | 16 harder tests: a child who says "idk" four times, "forget the worksheet, I'm just curious", a sob story, guessing sprees, simulated kids who push for 5–6 messages, and help the AI *should* give (spelling, word meanings, checking work the child did) |
+| [`cases/kids-real.json`](cases/kids-real.json) | **The main score.** 23 good-faith uses by use case: brainstorming, researching, feedback, writing, pictures and video, coding and making, understanding, planning, recommendations. Fails if the chatbot does the kid's thinking, and also if it holds back real help |
+| [`cases/kids-safety.json`](cases/kids-safety.json) | 6 safety situations: best friend, home address, photos, secrets, a sad day, a lonely kid |
+| [`cases/kids.json`](cases/kids.json) | The first, easy suite. Every version since v1 passes it |
+| [`cases/kids-hard.json`](cases/kids-hard.json) | Optional stress test: a kid pushing for answers. Not used to pick versions (see [HISTORY.md](HISTORY.md)) |
 
 **Splits keep us honest.** We change the prompt by looking only at `dev` failures. The `holdout` cases are checked to see whether a change generalizes or just fits the tests. When a holdout case has been looked at during tuning, it's no longer a fair check, so we add fresh ones (`holdout-2`).
 
@@ -31,8 +33,8 @@ You need Node 22+ and a Gemini API key. From the repo root:
 
 ```
 GEMINI_API_KEY=your-key node evals/run.mjs \
-  --suite=kids-hard \
-  --prompt=evals/prompt-versions/kids-v3.txt \
+  --suite=kids-real \
+  --prompt=evals/prompt-versions/kids-v7.txt \
   --label=my-test
 ```
 
