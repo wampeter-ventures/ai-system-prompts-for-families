@@ -1,4 +1,6 @@
-# ChatGPT is designed to be an incredible employee who gets work done — here's what that means for kids using the same tool that lawyers, engineers, designers, product managers and other adults use
+# ChatGPT is designed to be an incredible employee who gets work done
+
+# What does that mean when our kids use the very same tool that lawyers, engineers, designers, product managers and other adults use for their jobs?
 
 Most AI agents, LLMs and chatbots are built to be extremely helpful employees that work tirelessly and independently to get a job done for their boss (the user).
 
