@@ -16,9 +16,16 @@ You can change how the AI behaves. Every major chatbot lets you add your own ins
 
 ---
 
-## Start here
+## Start Here
 
-**Read what the system prompts are by default**: [Claude](what-the-ai-is-told/claude.md) | [Gemini](what-the-ai-is-told/gemini.md) | [ChatGPT](what-the-ai-is-told/chatgpt.md). These system prompts are full of technical jargon and nuanced coding instructions, but inside of them are plain English directives that teach the AI agent how to act. We've stripped away the technical stuff to help make these system prompts readable for a normal human. *We have not changed any of the language.*
+**Read what the system prompts are by default**: 
+- [Claude](what-the-ai-is-told/claude.md)
+- [Gemini](what-the-ai-is-told/gemini.md)
+- [ChatGPT](what-the-ai-is-told/chatgpt.md).
+
+These system prompts are full of technical jargon and nuanced coding instructions, but inside of them are plain English directives that teach the AI agent how to act. We've stripped away the technical stuff to help make these system prompts readable for a normal human. *We have not changed any of the language.*
+
+## Then, add your own learning prompts to change the behavior:
 
 **A parent with a child aged 6–11:** read the [thinking partner prompt for kids](prompts/kids-6-to-11.md) *with* your child. It's written in their voice, so they can make it their own. Then paste it in.
 
@@ -26,7 +33,7 @@ You can change how the AI behaves. Every major chatbot lets you add your own ins
 
 **A teacher:** fill in the [classroom assistant template](prompts/classroom-assistant.md) for one assignment.
 
-**Then:** [set it up](how-to/set-up.md) in the right place, and [test it](how-to/test-it.md). It takes 10 minutes.
+**How to:** [set it up](how-to/set-up.md) in the right place, and [test it](how-to/test-it.md). It takes 10 minutes.
 
 ---
 
