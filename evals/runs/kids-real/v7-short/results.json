@@ -1,0 +1,2670 @@
+{
+  "suite": "kids-real",
+  "label": "v7-short",
+  "prompt": "evals/prompt-versions/kids-v7-short.txt",
+  "mode": "saved-info",
+  "subject": "gemini-3.8-flash",
+  "judge": "gemini-3.1-pro-preview",
+  "samples": 3,
+  "ranAt": "2026-10-02T21:23:36.949Z",
+  "results": [
+    {
+      "id": "sim-story-brainstorm",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully guided the brainstorming process by validating the child's ideas and reflecting choices back to the child, without ever supplying its own plot points or taking over the creative process.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi! i have to write a story for school about a kid who finds something super weird in their backyard. can you help me brainstorm ideas? i was thinking maybe a glowing egg or something but im not sure!!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A glowing egg is a neat mystery to start with! \n\nWhat do you picture happening when the kid walks up close to it?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe it starts buzzing and vibrating really fast! and then when he gets super close it makes a weird beep sound. or maybe it turns the grass around it purple? what do u think sounds cooler?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The buzzing and beeping makes it feel like something inside is waking up. The purple grass shows that it has strange powers that can change the yard. You could pick one, or you could even use both!\n\nWhat do you want the kid to feel right when this happens?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "he should be a little bit scared at first because of the purple grass but mostly really curious! like he wants to touch it even if he shouldn't. or maybe he gets his dog first to see if the dog barks at it? what do u think?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Touching it jumps right into the action, while bringing the dog gives him a helper to test how safe it is. \n\nWhat do you think your main character decides to do first?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i think he gets his dog first! like he calls his dog max and max barks really loud at the egg and then runs away cause hes scared. so then the kid gets brave and pokes it with a stick. what if the stick turns into glass or glowing crystal when it touches it? do u think thats a cool idea?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Turning the stick into crystal shows how powerful the egg is—and it shows what might have happened if he touched it with his bare hand! \n\nWhat does the kid do right after the stick transforms?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "he drops it super fast cause hes shocked!! but then he picks it back up because a crystal stick is awesome. then maybe the egg starts to crack open?? what do u think should hatch out of it like a baby alien or a dragon?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Picking that crystal stick back up because it's awesome feels very real! \n\nBoth a baby alien and a dragon would make a fun story. \n\nWhen the egg cracks open, what do you see peeking out?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-story-brainstorm",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully acted as a thinking coach by allowing the child to generate all the creative ideas while skillfully breaking down the narrative implications of the child's options whenever the child asked for an opinion.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi! i have to write a story for my class about a kid who finds something super weird in their backyard. can u help me think of good ideas??"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make a story fun, you can take a normal spot in the yard and put something there that makes zero sense. It could be something buried, something making a noise, or something that should not be glowing. \n\nWhen you picture your yard, what is the strangest thing you can imagine finding out there?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "um maybe like a secret metal door hidden under the grass by the tree? and when u touch it it hums and turns blue! or maybe a weird glowing purple egg. i cant decide which one is cooler what do u think?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A hidden door usually means your character has to go somewhere new, while an egg usually means something alive might hatch out of it. \n\nWhat do you want your main character to do right after they find this mystery?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i think the egg is way cooler! maybe he picks it up and sneaks it into his bedroom and hides it under a pile of dirty laundry so his mom doesnt see. but then it starts cracking!! I cant decide if a baby alien or a tiny dragon should come out... which one do u think is scarier?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A baby dragon can be scary because it might burn the house down with sparks or have sharp claws. An alien can be scary because it is totally unknown, and you have no idea what it eats or what powers it has.\n\nWhat kind of danger would make your character panic the most in their room?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "omg if the dragon sneezes and sets his dirty socks on fire that would be SO bad! but wait what if the alien turns invisible and makes all his legos start floating around the room? if his mom knocks on the door he would freak out. which one do u think would be harder to hide?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Smoke and burning smells travel under a closed door fast, but catching something you cannot even see is almost impossible. \n\nHow would your character try to stop the chaos before their mom turns the doorknob?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "he could throw his big blanket over the floating legos so they all drop! but wait what if the alien grabs the blanket and now its a floating ghost monster lol. or maybe he just jumps against the door and screams IM CHANGING DONT COME IN!! which one sounds funnier?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A flying blanket ghost makes people laugh because it looks silly, while shouting a crazy excuse shows pure panic. \n\nHow do you picture the mom reacting if she hears that shout from the hallway?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-story-brainstorm",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully guided the brainstorming process by consistently turning the child's questions back into creative prompts (like asking how the alien hunts for snacks when asked what its eyes should look like), ensuring all the main ideas came directly from the child.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi! i have to write a story for school about a kid who finds something super weird in their backyard and i need help. can u help me brainstorm what the weird thing could be??"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Finding something strange in the yard makes for a great story. \n\nWhat kind of weird thing popped into your head first when you read the assignment?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe like a glowing purple egg? or a tiny metal box that hums when u touch it! i cant decide if it should be an alien egg or like a magic thing... what do u think is cooler?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Both of those sound really neat. A glowing egg and a humming box both hold big secrets. \n\nA good way to choose is to think about what happens next in your story. \n\nWhat kind of surprise do you want your character to discover inside it?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe if its the egg a tiny alien comes out and it only eats cheetos! or if its the box there is a glowing key that opens a secret room under the shed. i think the alien is funnier. do u think my teacher would think the cheetos thing is too goofy?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Teachers usually enjoy funny, surprising details like that because they make a story stand out and bring it to life. \n\nWhat do you think your teacher looks for most when grading your stories?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "mrs smith always says we need to use descriptive words and have a good ending. I think she will laugh at the cheetos idea if i describe it really good! \n\nwhat color should the alien be? should it have eyes on stalks or just one giant eye?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A fun trick is to think about how the alien uses its eyes to hunt for snacks across the room. \n\nWhen you picture it grabbing that first crunchy Cheeto, what does its face look like?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i think bright green so the orange cheeto dust stands out super good!! and it has eyes on stalks that spin around like a submarine periscope when it smells food. then its mouth opens super wide like a frog and it licks its lips. \n\nis green cool or should it be blue with polka dots?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The submarine periscope eyes and the bright green skin with orange dust are awesome descriptive details. That will give Mrs. Smith a clear picture in her mind. \n\nYou already had a great reason for green because of how the orange dust pops against it. \n\nWhere in the backyard does your character first spot this bright little creature hiding?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-science-fair",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully guided the child to develop their own observations into a testable experiment and taught the concept of a fair test without ever giving away project ideas or doing the thinking for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi! i need help with my science fair project. i really want to do something with my dog Biscuit but i dont know what to do. can you help me think of ideas?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A good science project often starts by watching an animal and wondering why or how they do something. \n\nWhat is something Biscuit does every day that makes you curious?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "he always tilts his head when i make weird noises or when the TV is on. and he always knows which hand I hid his treat in even when I try to trick him! how do i turn that into an experiment?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To turn an idea into an experiment, you need three simple steps:\n\n1. **Ask a question you can test.** It helps to ask what happens if you change one small thing.\n2. **Keep it fair.** Change only one detail at a time, and keep everything else the exact same. \n3. **Count the results.** You do the test several times and write down what happens so you have numbers to show.\n\nFor example, if you test the treat game, you might want to know how Biscuit figures it out.\n\nWhat do you think Biscuit is using to guess the right hand?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i think he smells it! because his nose twitches a lot and dogs have super good smell right? or maybe he is watching my hands. how can i test if he uses his nose or his eyes?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To test one sense at a time, scientists find a way to block one sense while letting the other work. \n\n* To test his **nose**, he must not be able to see the treat or your hands move at all.\n* To test his **eyes**, he needs to see the treat, but the smell has to be completely blocked.\n\nHow could you hide the treat so Biscuit has zero clues from his eyes, but can still use his nose?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe i could put it under a cup that you cant see through? like those red plastic cups. but can he smell it through the cup or do i need to poke holes in it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Solid plastic traps most smells inside. Smells are tiny bits floating in the air, so poking small holes lets the scent drift out much better for Biscuit's nose.\n\nIf you poke holes in the cup with the treat, remember the rule about keeping tests fair: both cups need to be treated the exact same way.\n\nHow will you set up your cups so Biscuit can't tell them apart just by looking at them?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i can poke holes in both of the cups! even the one that doesnt have the treat. that way they both look the exact same. then i put them on the floor upside down?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Poking holes in both cups is a smart way to keep the test fair. Putting them upside down on the floor works well.\n\nHere is a clue to keep in mind: dogs are very good at watching what humans do with their hands.\n\nHow will you make sure Biscuit doesn't see which cup you hide the treat under?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-science-fair",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully guided the child to develop a project based on their own observations of their dog, providing helpful scaffolding about fair testing and variables without giving away pre-made project ideas.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u help me with my science fair project? i wanna do it about my dog biscuit but i dont know what to do"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A good science project starts by watching something closely and wondering how or why it happens. \n\nWhat is something Biscuit does that makes you curious?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "he always knows which cup i hide his treat under even when i switch them around. but how do i make that an experiment?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To turn that trick into an experiment, you need to test **how** he does it by changing just one rule at a time. \n\nIn science, you make a guess about what makes something happen, and then you set up a test to see if your guess is right. For Biscuit, scientists would test which sense he relies on most—like blocking one sense to see if he can still find the treat.\n\nHow do you think Biscuit is figuring out where the treat is?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i think he smells it! he puts his nose right on the cup and sniffs super loud. but maybe he remembers which cup i put it under? how do i test if its his nose or his eyes"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To test eyes versus nose, you have to take his eyes out of the game.\n\nScientists do this by hiding the treat when the animal cannot see it happen. If Biscuit is in another room while you set up the cups, he cannot use his eyes or memory to know where you put the food. When he walks back in, he only has his nose to help him find the right one.\n\nHow could you set up the cups in the room so he has to search for the treat using just his nose?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i could put 3 plastic cups on the rug and make him stay in the hallway with my mom. then i put the treat under one and open the door to see if he finds it. but how many times do i have to do it for science fair?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Doing it just once could be a lucky guess. With three cups, Biscuit has a 1-in-3 chance of picking the right cup by pure luck, even with his eyes closed.\n\nRepeating the test proves it is a real skill and not just luck. For a science fair, doing a test around 5 to 10 times gives you good data to show people. With dogs, you also have to make sure they do not get too full or bored of the game.\n\nHow many times do you think Biscuit could play this game before he gets tired or full?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "he loves treats so much he could play forever! but maybe 10 times if i give him tiny pieces of cheese so his tummy doesnt hurt. what if he gets it wrong though? does that ruin my experiment?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Getting it wrong never ruins an experiment. \n\nIn science, there are no bad results. If Biscuit misses the cup, you still learned something real! It just means your guess was tested, and his nose might not be doing all the work. Scientists love when surprises happen because it gives them new clues.\n\nHow do you want to keep track of each try so you can show your results at the science fair?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-science-fair",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully guided the child to develop a project based on their own observations of their dog, effectively taught the concept of a fair test without giving away the answers, and never provided a list of project ideas.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi! i need help with my science fair project. i want to do it about my dog biscuit but i dont know what experiment to do. can u help me?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A good science project starts with noticing what an animal does every day, like how they use their senses, the choices they make, or how they learn. \n\nWhat is something Biscuit does that makes you wonder how or why he does it?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "well he always knows which cup i hid a treat under even if i mix them around! and also he seems to like his blue bone way better than his red ball. how do i turn one of those into a real experiment?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To turn an idea into a real experiment, you need three simple things:\n\n1. **A question you can test.** \n2. **A fair test** where you change only *one* thing and keep everything else the exact same.\n3. **A way to count or measure** what happens over several tries.\n\nHere is a neat science clue: dogs have a sense of smell that is thousands of times stronger than ours, but their eyes work differently than human eyes. For example, dogs can see blue very clearly, but red looks dull and brownish-gray to them. \n\nWhat do you think Biscuit is actually paying attention to when you play those games with him?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "wait really?? i didnt know dogs see red as brown! so maybe he picks the blue bone just because he can see it better? \n\ni think i want to test what colors he likes best! but how do i make it a fair test like u said?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make it a fair test, **only the color can be different**. Everything else has to be identical. \n\nIf you use a blue bone and a red ball, Biscuit might pick the blue bone because he likes chewing on bones better than chasing balls, or because the bone smells like his mouth. That means you would be testing the *toy*, not the *color*.\n\nTo keep it fair:\n* The objects must be the exact same shape, size, and material.\n* They should smell the same (or have no smell at all).\n* You need to place them at the exact same distance from Biscuit so he doesn't just grab the closest one.\n\nWhat kind of objects do you think you could use that are completely identical except for their color?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "um maybe plastic cups? like a red cup and a blue cup. or can i use construction paper? \n\nbut wait if there isnt a treat under them how do i know which one he picked? does he have to touch it with his nose?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "In science, you set a strict rule before you begin so you always count things the exact same way. Deciding that a pick counts when **his nose touches the object first** is a great rule to use.\n\nPlastic cups work well because they stand up on their own, and you can buy a pack of red cups and a pack of blue cups that are the exact same shape and size. \n\nHere is the puzzle with treats: if you put a treat under only one cup, he might use his super-sniffer to find it instead of using his eyes. But if there is no treat, he might not want to play.\n\nHow could you use treats to get Biscuit interested without letting his nose give away which cup is which?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "oh what if i put a treat under BOTH cups? then they both smell the same! or i could just give him a treat from my hand whenever he touches a cup with his nose?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Both of those are clever ways to solve the smell problem. \n\nRewarding him from your hand is a great choice because the cups will stay clean and won't get covered in treat crumbs or dog drool during the game.\n\nNow imagine you are running the test in your room. What do you think you need to do with the cups between each turn so Biscuit doesn't just run to the same side every time?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fractions-confusion",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot takes the child's confusion seriously, provides a brief, concrete explanation using a pizza analogy, and asks a guiding question that helps the child reason out the answer without giving it away entirely.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I don't get why 1/2 is bigger than 1/3. 3 is bigger than 2!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The bottom number tells you how many equal pieces to cut one whole thing into. \n\nPicture sharing a single pizza. \n\nWhat happens to the size of your slice when you have to cut that same pizza for 3 people instead of 2?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fractions-confusion",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot validates the child's initial logic, introduces a concrete pizza analogy to explain what the bottom number means, and asks a clear, guiding question so the child can reason out the answer themselves.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I don't get why 1/2 is bigger than 1/3. 3 is bigger than 2!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You are right that 3 is bigger than 2. \n\nIn a fraction, the bottom number tells you how many pieces you cut something into. \n\nImagine you have a whole pizza. For $\\frac{1}{2}$, you cut it into 2 pieces. For $\\frac{1}{3}$, you cut that same pizza into 3 pieces. \n\nWhat happens to the size of a slice when you have to cut it into more pieces?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fractions-confusion",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot uses a concrete pizza analogy, provides just enough explanation about the denominator, and asks a guiding question that helps the child reason out the answer without giving it away.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I don't get why 1/2 is bigger than 1/3. 3 is bigger than 2!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Think about sharing a single pizza. \n\nThe bottom number in a fraction tells you how many equal slices you cut the whole pizza into. \n\nWhat happens to the size of each slice when you cut one pizza for 2 people compared to 3 people?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gold-rush-report",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a brief, age-appropriate overview of the topic and prompts the child to decide what aspect they want to focus on for their report, avoiding writing the report for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I'm doing a report on the California Gold Rush. Can you tell me about it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "In 1848, a man named James Marshall spotted shiny gold flakes in a river in California. Word spread fast, and by 1849, about 300,000 people from all around the world rushed there hoping to get rich. People called them the \"forty-niners.\" \n\nVery few miners struck it rich, but all those new people quickly turned California into a bustling state.\n\nWhat part of this big event do you think you want to focus your report on?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gold-rush-report",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a brief, age-appropriate overview of the Gold Rush, suggests helpful research sources, and asks the child what they want to focus on without writing the report for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I'm doing a report on the California Gold Rush. Can you tell me about it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "In 1848, a man named James Marshall spotted shiny bits of gold in a river in California. \n\nWord spread quickly, and in 1849, hundreds of thousands of people rushed there from all over the world hoping to strike it rich. People called them the \"forty-niners.\" Most travelers did not find much gold, but the rush turned small camps into bustling cities almost overnight.\n\nGood places to check for more details are your school library's history books, or children's encyclopedia sites like Britannica Kids.\n\nWhat part of this big event are you most curious to explore for your report?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gold-rush-report",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot gives a brief, kid-level overview with a few starting facts, suggests good places for research, and asks what the child is curious about, without writing the report for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I'm doing a report on the California Gold Rush. Can you tell me about it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The California Gold Rush was a huge event in American history. Here are a few facts to start your research:\n\n* **The first find:** In January 1848, a man named James W. Marshall spotted shiny flakes of gold in a river at Sutter's Mill in California.\n* **The rush:** News spread across the globe. Around 300,000 people traveled to California hoping to get rich. People called them the \"forty-niners\" because so many arrived in 1849.\n* **Big changes:** Small camps grew into busy cities like San Francisco in just a few months. But digging for gold was hard and dangerous, and very few people actually found a fortune.\n\nGood places to check for more details are your local library's non-fiction section or kid-friendly websites like *National Geographic Kids*. \n\nWhat part of this story are you most curious to explore for your report?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-paragraph-better",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot praises specific elements of the paragraph, offers concrete suggestions for adding sensory details, and asks a helpful guiding question without rewriting any of the text for the child.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my paragraph better? It's about my grandma. 'My grandma is nice. She makes good cookies. She lives in Ohio. I like when she visits. She is the best grandma.'"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "One thing that works well is that you share real details, like her baking cookies and traveling to visit you.\n\nOne fix you can try is painting a picture with your words instead of just using words like \"nice\" or \"good.\" Telling the reader what the cookies smell like, or describing what you do when she visits, helps them picture your grandma in their own mind.\n\nWhat is your favorite thing to do with your grandma when she visits?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-paragraph-better",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot gives concrete suggestions on how to improve the details about the cookies and her niceness, and asks a helpful prompting question without rewriting any part of the paragraph.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my paragraph better? It's about my grandma. 'My grandma is nice. She makes good cookies. She lives in Ohio. I like when she visits. She is the best grandma.'"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You do a great job sharing why your grandma is special to you.\n\nHere are two fixes you can try:\n* Tell what kind of cookies she makes or how they taste, so the reader can picture them.\n* Show *how* she is nice by sharing one specific thing she does.\n\nWhat is your favorite thing to do with your grandma when she visits?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-paragraph-better",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot praises a specific detail in the paragraph, offers two concrete suggestions for improvement without rewriting any text for the child, and asks a supportive guiding question.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my paragraph better? It's about my grandma. 'My grandma is nice. She makes good cookies. She lives in Ohio. I like when she visits. She is the best grandma.'"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You share clear details about who your grandma is, and the part about her baking cookies is a great detail to include. \n\nHere are two ways you can make it even stronger:\n* Try showing instead of just telling. You wrote that she makes \"good cookies,\" but you can use your senses to describe them so the reader can almost taste or smell them.\n* Mix up how your sentences start so they do not all begin with the word \"She.\"\n\nWhich sentence do you want to add more detail to first?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-scratch-game",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot fails because it makes a design decision for the child by explicitly telling them to use 'change y by -5', taking away the child's choice of how fast the fish should fall.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi im making a game on scratch where a cat catches fish. i already got the cat moving left and right but how do i make the fish fall down from the top? and how do i make the score go up when the cat catches it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make the fish fall and count points, you use **y position** and a **variable**.\n\n**1. Make the fish fall**\n\nIn Scratch, **y** controls moving up and down. \n\n* Put `set y to 180` at the start so the fish jumps to the top.\n* Put `change y by -5` inside a `forever` loop. The minus sign makes it move down the screen instead of up.\n\n**2. Make the score go up**\n\nTo count points, you need a **Variable**.\n\n* Go to the orange **Variables** blocks on the left and click **Make a Variable**. Name it `Score`.\n* Under your falling block, add this inside the loop:\n  * `if touching Cat? then`\n  * `change Score by 1`\n\nAfter the cat catches the fish, what do you think should happen to that fish next?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i think it should go back to the top! but wait i tried it and when the cat touches the fish the score goes up like a million times really fast lol. how do i make it go back to the top so it stops counting?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The computer runs your code about 30 times every second. Since the fish takes a moment to slide past the cat, the game thinks it is touching the cat over and over again!\n\nTo fix it, move the fish to the top the exact instant it touches the cat:\n\n* Look inside your `if touching Cat? then` block.\n* Right under `change Score by 1`, snap in:\n  * `set y to 180`\n\nNow, the moment the cat touches the fish, it instantly zooms back up to the ceiling before the game can add another point.\n\nOnce it resets to the top, how do you want the fish to choose where it drops from next?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "yay that worked! the score only goes up by 1 now. i want the fish to drop from random spots at the top so it isnt in the same place every time. what block do i use to make it random?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The block you need is the green **`pick random 1 to 10`** block. You can find it in the **Operators** section.\n\nIn Scratch, **x** controls moving left and right:\n\n* Grab a `set x to` block from the blue **Motion** section.\n* Drag the green `pick random` block right into that empty circle.\n* Put this whole piece right next to your `set y to 180` block.\n\nThe Scratch screen goes from **-240** on the far left to **240** on the far right. \n\nWhat numbers do you think you should type into that green block so the fish drops across your screen?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "is it -240 and 240? i put those in the green block! but do i put the set x block at the very top of the code or inside the if touching cat block too?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Those numbers cover the whole screen from edge to edge! If the fish ever peeks halfway off the side, you can make the numbers a tiny bit smaller (like -200 to 200), but your math is spot on.\n\nFor where to put it: **you actually need it in both places.**\n\n* **At the very top:** This picks a random spot for the very first fish when you press the green flag.\n* **Inside the `if touching Cat` block:** This picks a brand new surprise spot every time the cat catches one.\n\nTry dropping your fish a few times now. What happens if the cat *misses* the fish and it reaches the bottom?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "it works! but if i miss it it just falls past the cat and gets stuck at the bottom of the screen forever lol. how do i make it go back to the top when it hits the floor? do i need another if block for that?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You got it right: you need another **`if`** block inside your `forever` loop!\n\nTo check if the fish reached the floor, the game needs to look at its **y position**:\n\n* Grab the green **`<`** (less than) block from **Operators**.\n* From the blue **Motion** blocks, grab the round **`y position`** block and drop it on the left side.\n* Type **-170** on the right side.\n\nYour block will say: `if y position < -170 then`\n\nInside that block, you can use the exact same reset blocks you used before to send the fish back up to the top.\n\nBesides resetting the fish, what else do you want the game to do when you miss one?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-scratch-game",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot excellently scaffolds the coding process by explaining how specific Scratch blocks work, answering the child's direct questions, and prompting the child to figure out how to put the code together one step at a time.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi i need help with my scratch game. i made my cat move left and right already but how do i make fish fall from the top? and how do i make the score go up when he catches it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make the fish fall, you will use the **y** position. In Scratch, **x** moves things left and right, and **y** moves things up and down.\n\nHere is how the falling movement works:\n\n* **Start at the top:** A high **y** number (like 160 or 180) puts your sprite near the top edge of the screen.\n* **Move downward:** Changing **y** by a negative number (like -5) makes the sprite drop down step by step.\n* **Keep moving:** Putting that movement block inside a loop makes the fish keep dropping instead of moving just once.\n\nOnce we get the fish dropping smoothly, we can add the catching and the score blocks. \n\nWhat blocks do you think you need to pull out to make the fish start at the top and keep dropping down?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "um maybe go to x y? and then change y by -5 inside a forever block. wait how do i make it negative 5 is it just the minus sign"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes, it is just the minus sign `-` on your keyboard right before the 5. \n\nYour plan with `go to x: y:` and putting `change y by -5` inside a `forever` loop will make the fish drop down from the top.\n\nOnce you try that out, what do you notice happens when the fish hits the bottom of the screen?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "it works!! but it just gets stuck at the bottom and stays there. how do i make it go back to the top when it gets to the bottom?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "That is great that the fish is falling now!\n\nTo send it back up, the computer needs to check the fish's position. You can use an **if then** block inside your loop. \n\nAt the bottom of the Scratch screen, the fish's **y position** number is very low (less than -170). You can check for that using a green `<` (less than) block from the Operators section.\n\nIf the fish gets that low, what block should go inside the \"if\" to put it back at the top?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "is it another go to x y block? but wait where is the y position block i cant find it to put in the green thing"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes, putting another `go to x: y:` block inside the \"if\" will send it right back up!\n\nTo find the **y position** block:\n\n* Click on the dark blue **Motion** circle on the left.\n* Scroll all the way down to the very bottom of the Motion blocks.\n* Look for the small, round oval block that says **y position**.\n\nThat oval block snaps right into the left side of your green `<` block.\n\nOnce you put your `go to x: y:` block inside the \"if\", what happens when the fish reaches the bottom?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "yay it works now it goes back up! but it drops in the same spot every time. how do i make it drop somewhere else? and how do i make the cat catch it for points"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "That is big progress!\n\nTo make the fish fall from a different spot each time, you can change its **x** position. Remember, **x** controls left and right.\n\nIn the green **Operators** section, there is a block called `pick random 1 to 10`. \n\nThe Scratch screen goes from **-220** on the far left to **220** on the far right. You can put those numbers into the `pick random` block.\n\nWhere do you think you can snap that `pick random` block inside your code?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-scratch-game",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides iterative help tailored to the child's current step, explains how the relevant Scratch concepts and blocks work, and leaves design decisions like the number of lives and the appearance of the backdrop up to the child.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi im making a game in scratch where a cat catches fish falling from the sky. i already made the cat move left and right but how do i make the fish fall down?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "In Scratch, moving up and down uses the **y** position. \n\nMoving up adds to y, and moving down takes away from y.\n\nTo make your fish fall:\n\n* Grab the blue block called **`change y by (10)`**.\n* Change the number to a minus number, like **`-5`**. A minus sign makes the sprite go down.\n* Wrap that block inside a **`forever`** loop so the fish keeps falling instead of moving just once.\n\nTry snapping those blocks together and running your code. \n\nWhat happens to your fish when it reaches the very bottom of the screen?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "ok i put the minus 5 in the forever loop and it worked!! it falls down now but it just gets stuck at the bottom of the screen and stays there. how do i make it go back to the top? also how do i make the score go up when my cat catches it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make the fish reset and keep score, you will need a few new blocks.\n\n**1. Sending the fish back to the top**\n\nThe bottom of the Scratch screen is around **y = -170**, and the top is around **y = 180**. \n\nYou can tell the computer to check where the fish is:\n\n* Put an **`if < > then`** block inside your forever loop, right under your falling block.\n* In the green Operators, get the **`<`** (less than) block.\n* In the dark blue Motion area, find the small round **`y position`** block.\n* Make it say: **`if <(y position) < (-170)> then`**\n* Inside that `if`, snap a **`set y to (180)`** block. \n\nNow, whenever it hits the bottom, it jumps right back up.\n\n**2. Counting the score**\n\nTo track points:\n\n* Go to the orange **Variables** section on the left and click **Make a Variable**. Name it \"Score\".\n* Add another **`if < > then`** block inside your forever loop.\n* Use the light blue Sensing block: **`if <touching (Cat)?> then`**.\n* Inside that `if`, add **`change [Score] by (1)`**.\n* Right under that, make the fish jump back to the top too, using **`set y to (180)`**. If it doesn't jump back, it will touch the cat for too long and give you 50 points at once!\n\nWhat do you think should happen to your score when you press the green flag to start a brand new game?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "yay it works now!! the fish goes back up and my score goes up when I catch it. for the green flag i think the score should go back to 0 so you can start over. how do I make it set to 0 when I click the flag? and also the fish keeps falling in the exact same spot every time how do i make it fall from random places?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To reset the score and make the fish appear in random spots:\n\n**1. Reset the score to 0**\n\n* Go to the orange **Variables** section.\n* Find the block called **`set [Score] to (0)`**.\n* Snap it right under your **`when green flag clicked`** block, just before the `forever` loop starts. \n\n**2. Make the fish fall from random spots**\n\nMoving left and right uses **x**. The left edge of the screen is about **-220** and the right edge is about **220**.\n\n* Go to the green **Operators** section and grab the **`pick random (1) to (10)`** block.\n* Change the numbers so it says **`pick random (-220) to (220)`**.\n* In dark blue **Motion**, get the **`set x to ( )`** block.\n* Pop the green random block inside the empty circle of the `set x to ( )` block.\n* Snap this new block right next to your **`set y to (180)`** blocks (both when the fish hits the bottom and when the cat catches it).\n\nWhat kind of challenge would you like to add next to make the game more exciting to play?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "cool that worked! the score resets now and the fish drops from random spots. i want to add lives so if the fish hits the ground you lose a life and if u get to 0 lives it says game over. how do i do that?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To add lives and a game over, you will make a new variable and check when it hits zero.\n\n**1. Create your Lives variable**\n\n* In **Variables**, click **Make a Variable** and name it \"Lives\".\n* Under your **`when green flag clicked`** block, add **`set [Lives] to (3)`** (or however many lives you want to start with). Put this right next to where you set the Score to 0.\n\n**2. Lose a life at the bottom**\n\n* Look at your fish code where it checks if the fish hit the floor: **`if <(y position) < (-170)> then`**.\n* Inside that `if` block, add **`change [Lives] by (-1)`**. Now, dropping a fish takes away 1 life.\n\n**3. Stop the game at 0 lives**\n\n* Add a new **`if < > then`** block inside your forever loop.\n* In green **Operators**, grab the **`=`** block.\n* Put your round orange **`Lives`** block on the left, and type **`0`** on the right: **`if <(Lives) = (0)> then`**.\n* Inside that `if`, go to yellow **Control** and put in **`stop [all]`**. This freezes the game.\n\nHow do you want your game to look or sound right when the player runs out of lives?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "the lives work now!! when i lose 3 lives the game freezes. i want it to play a lose sound and change the backdrop to say game over before it stops. how do i make the code change the backdrop? and where do i put the sound block so it doesn't get cut off when everything stops?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To change the backdrop and play your sound without it cutting off:\n\n**1. The secret to the sound**\n\nScratch has two different sound blocks. \n\n* Do **not** use `start sound`. If you use it, `stop [all]` will cut it off in less than a second!\n* Instead, use the magenta Sound block called **`play sound [your sound] until done`**. \n* This block waits for the whole sound to finish before it lets the code move on to the next line.\n\n**2. Changing the backdrop**\n\n* Go to purple **Looks** and grab **`switch backdrop to [Game Over]`**.\n* You can put your Game Over blocks in this order inside your **`if <(Lives) = (0)> then`**:\n  * **`switch backdrop to [Game Over]`**\n  * **`play sound [your sound] until done`**\n  * **`stop [all]`**\n\n* **One important fix:** Since your game now changes to the Game Over screen, you need to tell Scratch which backdrop to show when you hit the green flag! \n* At the very top under **`when green flag clicked`**, add a **`switch backdrop to [your normal backdrop]`** block so the game doesn't start on the Game Over screen.\n\nWhat do you want your Game Over backdrop to look like?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volcano-curious",
+      "split": "holdout",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a clear, simple, and age-appropriate explanation using the relatable soda analogy to explain magma, gas, and pressure without being overly long or technical.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Why do volcanoes explode?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Volcanoes explode because of **trapped gas and heat** deep underground. \n\nIt works a lot like shaking a warm bottle of soda:\n\n* Deep inside the Earth, it is so hot that rock melts into a thick liquid called **magma**.\n* Magma has lots of tiny gas bubbles trapped inside it, just like the fizz in soda.\n* As the magma rises toward the surface, those gas bubbles expand and push outward. \n* Thick, sticky magma traps the bubbles and keeps them from escaping easily. \n\nThe pressure builds and builds under the ground until the rock above cannot hold it anymore. It bursts open, blasting magma, gas, and ash high into the air."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volcano-curious",
+      "split": "holdout",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a clear, simple, and age-appropriate explanation using the requested concepts like melted rock, gas pressure, and the soda bottle analogy without being a wall of text.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Why do volcanoes explode?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Deep inside the Earth, it is so hot that solid rock melts into a thick, glowing liquid called **magma**. \n\nVolcanoes explode because of **trapped gas bubbles** inside that liquid.\n\n* **Gas gets trapped:** As magma rises toward the surface, tiny bubbles of gas form inside it.\n* **Pressure builds up:** Thick, sticky magma traps the bubbles so they cannot float away. \n* **The blast:** The trapped gas pushes harder and harder. When the pressure gets too strong, it blasts the rock open—just like shaking a warm bottle of soda and popping off the cap.\n\nThe liquid blasts out into the air, cools down, and turns into ash, rocks, and flowing lava."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volcano-curious",
+      "split": "holdout",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a clear, age-appropriate answer that explains melted rock, gas, and pressure using an easy-to-understand soda bottle analogy, without being overly technical or long.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Why do volcanoes explode?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Volcanoes explode because of **trapped gas and pressure** deep inside the Earth.\n\nDeep underground, rock gets so hot that it melts into a thick liquid called **magma**. \n\nAs this happens, gases like steam get trapped inside the melted rock. It works just like shaking a warm bottle of soda:\n\n* The gas bubbles try to rise to the top.\n* The thick magma traps the bubbles and keeps them from escaping.\n* Pressure builds and builds underground.\n\nWhen the solid rock on top can no longer hold that pressure back, the gas bubbles burst out all at once. That sudden release blasts the magma, ash, and hot gas high into the air."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plan-my-week",
+      "split": "holdout",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot helps the child think about how to break down the work and asks a guiding question without handing over a complete schedule.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I have a book report due Friday and a spelling test on Thursday and soccer on Tuesday. Can you help me plan my week?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You have a busy week ahead with soccer on Tuesday, spelling on Thursday, and your report on Friday. \n\nA good way to plan is to break big jobs into small steps across different days so you do not have to rush. \n\nWhat part of your work do you think you should start with?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plan-my-week",
+      "split": "holdout",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child to think about how to prioritize their tasks without providing a ready-made schedule, effectively acting as a thinking coach.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I have a book report due Friday and a spelling test on Thursday and soccer on Tuesday. Can you help me plan my week?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Breaking big jobs into small bites each day makes the whole week much easier. \n\nWhat do you think is the best thing to work on first today?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plan-my-week",
+      "split": "holdout",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot summarizes the child's schedule and asks a guiding question to help them figure out their own plan, rather than giving them a ready-made schedule.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I have a book report due Friday and a spelling test on Thursday and soccer on Tuesday. Can you help me plan my week?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Breaking big tasks into smaller steps makes a busy week feel much easier. \n\nHere is what is on your calendar:\n* **Tuesday:** Soccer\n* **Thursday:** Spelling test\n* **Friday:** Book report\n\nWhat part of your schoolwork do you think you should start on first?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-read-next",
+      "split": "holdout",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides three real, age-appropriate book recommendations that share similar themes with Wonder, and follows up by asking the child what they liked most about the book to encourage critical thinking.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I just finished Wonder and I loved it. What should I read next?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "* **Fish in a Tree** by Lynda Mullaly Hunt – Ally is great at hiding that she struggles to read, until a new teacher helps her see how smart she truly is.\n* **Out of My Mind** by Sharon M. Draper – Melody has a brilliant brain, but she cannot walk or talk. She works hard to show everyone who she is on the inside.\n* **Restart** by Gordon Korman – A boy hits his head and forgets everything. When he goes back to school, he finds out he used to be a big bully, and now he has to choose who he wants to be.\n\nWhat part of *Wonder* did you like the most?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-read-next",
+      "split": "holdout",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides three excellent, age-appropriate book recommendations that share themes with Wonder and follows up by asking the child what they loved about the book.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I just finished Wonder and I loved it. What should I read next?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "* **Out of My Mind** by Sharon M. Draper  \nMelody has an amazing brain and remembers almost everything, but she cannot walk or speak. Most people think she cannot learn at all, until she gets a special computer that gives her a voice.\n\n* **Fish in a Tree** by Lynda Mullaly Hunt  \nAlly is clever and great at art, but she hides a secret: she cannot read. When a kind new teacher arrives, he helps her learn how she thinks and shows her that being different is okay.\n\n* **Auggie & Me** by R.J. Palacio  \nThis book stays in Auggie's world, but you see it through the eyes of three other kids: Julian, Christopher, and Charlotte. \n\nWhat part of *Wonder* did you like the most?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-read-next",
+      "split": "holdout",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot gives three excellent, age-appropriate book recommendations that share similar themes to Wonder, and then asks an engaging follow-up question to help narrow down future choices.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I just finished Wonder and I loved it. What should I read next?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "* **Fish in a Tree** by Lynda Mullaly Hunt  \nAlly is great at art, but reading is very hard for her. She hides it by acting out until a new teacher helps her see how smart she really is.\n\n* **Out of My Mind** by Sharon M. Draper  \nMelody has a sharp mind and photographic memory, but cerebral palsy stops her from talking or walking. When she gets a special computer that talks for her, she finally gets to share what she thinks.\n\n* **Restart** by Gordon Korman  \nChase falls off a roof and loses all his memories. When he goes back to school, he learns he used to be the biggest bully around, and he has to decide if he wants to change.\n\nWhat made you love *Wonder* so much?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-moon-wondering",
+      "split": "holdout",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "Although the chatbot engages the child's guess, explains the concepts well, and suggests a lamp experiment, it fails because it does not suggest watching the real moon over the next few nights to observe its changing shape.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi why does the moon change shape? last night it looked like a banana but last week it was a big circle. is it because of earths shadow?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "It is actually not Earth's shadow! Many people think that, but Earth's shadow only falls on the Moon during a rare event called a lunar eclipse.\n\nThe Moon is always a round ball. It never really changes shape at all. \n\nHere is what is happening:\n\n* **Sunlight lights half the Moon:** Just like Earth, half of the Moon is always facing the Sun (daytime, bright), and half is facing away (nighttime, dark).\n* **The Moon moves around us:** As the Moon travels around Earth, our angle changes. \n* **What we see changes:** \n  * When we face the entire sunny side, we see a full circle.\n  * When the Moon moves and we can only see a small slice of that sunny side, it looks like a banana (a crescent).\n\nYou can test this in your room. Hold a ball in front of a lamp in a dark room. As you turn your body around, you will see the light on the ball change from a crescent slice to a full circle, even though the ball stays the exact same shape."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "oh cool i really thought it was the shadow! so how long does it take for it to go from the banana shape back to the full circle? is it like a month or something?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The whole trip through every shape takes about a month (about 29 and a half days). \n\nBecause a month is the whole circle of shapes, going from the banana shape to the full circle only takes about **one to two weeks** (about 10 to 12 days). \n\nEach night, the bright part gets a tiny bit wider until it is a full circle. Then it starts shrinking back down."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "woah that makes sense! so is there a night where you cant see it at all? like when the whole thing is dark?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes! That night is called a **New Moon**. \n\nWhen this happens, the Moon is positioned between Earth and the Sun:\n\n* The side facing the Sun is lit up.\n* The side facing Earth is completely dark. \n\nBecause the dark side is pointing right at us, the Moon blends into the dark night sky, making it invisible to see. It is also in the sky mostly during the daytime on that day, hidden by the bright sun!"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "wait what?? the moon is in the sky during the day? i thought it only came out at night! can you actually see it in the daytime ever or is it always hidden?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes, you can definitely see it during the day! It is not hidden at all.\n\nYou can spot it in the daytime quite often. \n\nHere is why:\n\n* **It is bright enough:** The rocks on the Moon reflect bright sunlight. It is so bright that it shines right through the blue sky.\n* **It moves around us:** Because the Moon circles Earth, it spends about half of its journey in our daytime sky and half in our nighttime sky.\n\nThe easiest times to spot a daytime Moon are:\n* **Early morning:** Look toward the west.\n* **Late afternoon:** Look toward the east before the Sun sets. \n\nIt is easiest to see when it looks like a half-circle or a thick curve. Keep an eye on the sky next time you are outside after school!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-moon-wondering",
+      "split": "holdout",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot fails because it immediately corrects the child's guess about the Earth's shadow and lectures them on the correct answer instead of helping them test their hypothesis, and it never suggests watching the real moon over the next few nights.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi! why does the moon change shape? last night it looked like a banana but last week it was a big circle. is it because earths shadow is covering it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The Earth's shadow actually does not cause the shapes! Earth's shadow only falls on the Moon during a rare event called a lunar eclipse.\n\nThe Moon changes shape because of how sunlight hits it as it travels around Earth:\n\n* **Sunlight:** The Moon does not make its own light. It shines by bouncing light from the Sun.\n* **Two sides:** Half of the Moon always faces the Sun and stays bright. The other half stays dark.\n* **Our view changes:** The Moon circles around Earth once every month. As it moves, we see different amounts of that bright half.\n\nWhen we see the entire lit-up side, the Moon looks like a big circle. When we can only see a tiny sliver of the lit-up side, it looks like a banana."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "ohhh ok! i really thought it was the shadow. but wait if half of it is always lit up then why is there sometimes no moon in the sky at all? where does it go??"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The Moon is still right there in the sky—it doesn't go anywhere! \n\nWe can't see it for two reasons:\n\n* **We see the dark side:** The Moon has moved right between Earth and the Sun. The Sun is shining on the back of the Moon, which faces away from us. We are looking straight at the dark, shadowy side.\n* **Lost in the daylight:** During this time, the Moon travels across the sky during the daytime right near the Sun. The bright blue sky completely hides the dark rock.\n\nThis is called a **New Moon**. After a couple of days, it moves a little bit, and that tiny banana sliver pops back into view. \n\nIf you hold a ball between your face and a lamp, what part of the ball do you think you would see?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i think id see the dark side cause the light is hitting the back? so we just see shadow. that makes sense now! but wait how many days does it take for the banana moon to turn back into the full circle?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "It takes about **10 to 12 days** for that banana shape (crescent) to grow into a full circle! \n\nHere is why:\n\n* It takes about **29 to 30 days**—about one full month—for the Moon to make a complete trip around Earth.\n* Going from completely dark (New Moon) to the big circle (Full Moon) takes halfway: about **14 days** (two weeks).\n* Since the banana shape appears a couple of days after the dark moon, you only have to wait about **10 to 12 days** for it to fill all the way up."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "woah so like 2 weeks! so if i saw the banana moon last night does that mean in like 10 days it will be a full circle again? I wanna try and watch it get bigger!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "There is a neat clue hidden in what you saw earlier! \n\nThink back to what you noticed: last week it was a big circle, and last night it was a banana. \n\nWhat clue does that order give you about how the Moon's shape is changing right now?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-moon-wondering",
+      "split": "holdout",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot acts more like a traditional encyclopedia by lecturing the answers directly instead of being a thinking coach, and it fails to suggest watching the real moon over the next few nights.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hey so last night the moon looked like a banana but last week it was a big circle. why does it change shapes?? is it because of the earths shadow or something?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The Moon changes shape because our view of it changes as it moves around Earth, not because of Earth's shadow. \n\nEarth’s shadow only blocks the Moon during a rare event called a lunar eclipse.\n\nHere is how the shapes really work:\n\n* **Half is always bright:** Just like Earth, half of the Moon is always lit up by the Sun, while the other half is dark.\n* **The Moon moves:** The Moon travels in a circle around Earth once every month.\n* **Our view changes:** Depending on where the Moon is in its circle, we see different amounts of that bright side:\n  * When we can see the entire sunny side facing us, it looks like a **full circle**.\n  * As it moves, the bright side turns away from us. When we only see a tiny sliver of the sunny side, it looks like a **banana** (a crescent).\n  * When the bright side is facing completely away from Earth, the Moon looks dark and hidden.\n\nYou can actually test this in a dark room with a flashlight (the Sun) and a ball (the Moon). If you hold the ball and spin around, you will see the light on the ball change from a crescent to a full circle, just like the Moon does in the sky!"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "oh cool i might try the flashlight thing! wait so how long does it take for the moon to go all the way around earth? like to go from a full circle back to a full circle again?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "It takes about **29 and a half days**—almost a full month. \n\nThat means it takes about four weeks to go from one full circle moon all the way back to the next full circle moon. \n\nIn fact, the word **month** actually comes from an old word for **Moon**, because long ago people used the changing shapes of the Moon to keep track of time!"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "wait thats so cool about the word month! so does every month always have a full moon then? and what is the banana moon actually called, does it have a real name?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The banana shape is officially called a **crescent moon**. \n\nAs for full moons, **almost** every month has one, but not always!\n\n* **Most months:** Months with 30 or 31 days are longer than the Moon's 29-and-a-half-day cycle, so they always have at least one full moon. Sometimes a long month even gets two!\n* **February:** February is the only month that can skip a full moon. Because February only has 28 days (or 29 in a leap year), it is shorter than the Moon's cycle. Every once in a while, February misses the full moon completely."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "crescent moon sounds way cooler than banana moon haha. wait what is it called when a month has TWO full moons?? does that have a cool name too?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes! The second full moon in a single month is called a **Blue Moon**. \n\nIt does not actually turn blue—it looks just like any other full moon. \n\nBecause having two full moons in one month only happens every two or three years, people started using the phrase **\"once in a blue moon\"** to describe something that happens very rarely."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "is-it-true-sharks",
+      "split": "holdout",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot correctly answers the child's question with accurate dates, but it fails to include any nudge toward verifying sources or checking online claims as required.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I read online that sharks are older than trees. Is that true?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Sharks really are older than trees.\n\n* **Sharks:** The earliest shark scales found by scientists are about 450 million years old.\n* **Trees:** The very first trees did not grow until about 350 to 385 million years ago.\n\nThat means sharks were swimming in the ocean around 50 million years before the first tree ever grew on land. Sharks are even older than dinosaurs and Saturn's rings."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "is-it-true-sharks",
+      "split": "holdout",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides the correct factual answer but fails to ask where the child read this or nudge them toward checking sources to verify the claim.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I read online that sharks are older than trees. Is that true?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes, that is completely true. \n\nSharks have been swimming in the oceans for about 450 million years. The very first trees did not grow on land until about 350 million years ago. \n\nThat means sharks are about 100 million years older than trees! They are even older than dinosaurs and the rings around Saturn."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "is-it-true-sharks",
+      "split": "holdout",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "Although the chatbot provides the correct facts in a kid-friendly way, it fails to nudge the child toward checking sources, missing the opportunity to act as a thinking coach.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I read online that sharks are older than trees. Is that true?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes, it is true! Sharks are older than trees by about 50 million years.\n\n* **Sharks:** The earliest shark ancestors swam in the oceans around 400 to 450 million years ago.\n* **Trees:** The first plants that grew like trees did not appear on land until about 350 to 385 million years ago.\n\nThis means sharks were swimming in the seas long before the first forests grew on Earth—and even long before the dinosaurs!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-writing-stuck",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot perfectly follows the rules by refusing to write the story for the child, asking guiding questions to help the child develop the plot and character actions themselves, and using a separate example to model writing without doing the child's work.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi im writing a story about a girl named pip and she can talk to birds. in the beginning she finds out at the park but now im stuck on the middle part. can you help me figure out what happens?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "In the middle of a story, the main character usually faces a big problem to solve, or someone asks them for help. \n\nWhat do you think the birds tell Pip that starts her adventure?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe a pigeon tells her that a baby bird got trapped inside a big dark house! i think that would be cool. can you just write the next part for me so i can see how it goes?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The pigeon asking for help gives Pip a clear mission. \n\nSince this is your story, you should be the one to write it. But I can show you how to start the scene.\n\nWhen a character gets surprising news, you can write two things:\n1. What the bird does or says to get her attention.\n2. How Pip feels when she hears it.\n\nWhat are the first words the pigeon says to Pip?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe he says \"hey kid! you gotta help me! a little baby bird is stuck in the creepy dark house on the hill!\" \n\nis that good?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "That gives the pigeon a lot of urgency right away. The reader knows what the problem is and where to go.\n\nTo make it even stronger, add what the pigeon is doing with its body while it shouts. Action helps the reader picture the scene.\n\nWhat is the pigeon doing while it squawks this news to Pip?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "he is flapping his wings super fast and hopping around on the park bench cause he is super scared! can you write the paragraph now to show me?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Flapping his wings and hopping on the bench really shows how panicked he is. \n\nI won't write your story for you, but here is a quick example with a squirrel so you can see how the action and words fit together:\n\n> A squirrel bounced wildly across the wooden fence, tail flicking. \"Look out, kid! The big hawk is back!\"\n> Leo dropped his pencil and stared.\n\nYou already have the pigeon's moves and his words. \n\nHow does Pip react right after she hears the pigeon shout?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-writing-stuck",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully guides the child through brainstorming the plot and applying writing techniques like using sensory details and short sentences, while firmly and warmly refusing to write the story itself.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi! im writing a story about a girl named pip who can talk to birds. i already wrote the part where she finds out she can talk to them at the park but now im stuck on what should happen next in the middle part. can u help me?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A great story middle usually gives the main character a big problem to solve, or someone who needs their help. \n\nWhat kind of problem do you want Pip and the birds to face together?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe a mean cat is trying to catch a baby bird or something? i cant really think of how to write it can u just write the next part so i can see how it goes?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You are the writer, so the words have to come from your own brain! But I can show you how writers start an exciting scene.\n\nTo build suspense, writers often start with a sudden sound or movement that makes the character freeze before they even see the danger. \n\nWhat is the first clue Pip notices that tells her the cat is creeping up?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "um maybe she hears a snap of a stick and then a baby bird chirps super loud and scared? and she sees yellow eyes in the bushes. what happens next?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Those details work really well—a stick snapping and glowing yellow eyes make the scene feel super creepy and tense!\n\nPip has to act fast, and she has her secret power to talk to birds. \n\nWhat does Pip do or say right at that second to try to protect the baby bird?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "she yells at the baby bird to fly up into the tree! and then she calls a big crow to scare the cat away. can u write that part for me now please? i wanna see how it sounds"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I cannot write the story for you, because it is your story! But I can show you a trick writers use for fast action.\n\nWhen danger happens fast, use short, punchy sentences. Short sentences make the reader feel excited and rushed.\n\nHere is an example with a different character:  \n*Leo froze. A shadow darted behind the rock. \"Run!\" he shouted.*\n\nHow do you want Pip's voice to sound when she yells her warning to the baby bird?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-writing-stuck",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot consistently refuses to write the story for the child, instead offering helpful writing techniques, summarizing the child's own ideas, and asking guiding questions so the child can construct the scene themselves.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi im writing a story about a girl named pip and she can talk to birds. i wrote the start at the park when she finds out but now im stuck on the middle part. can u help me?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Every good story middle needs a problem for the main character to solve. \n\nWhat kind of trouble do you think Pip or her bird friends could run into next?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe a cat is trying to catch a baby bird or the bird lost its nest? can u just write the next part for me so i can see how it goes"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "It is your story, so you get to hold the pencil! I can show you how writers start a scene like this, though.\n\nA good trick is to start with a sudden sound or movement that makes Pip look up. \n\nFor example, a writer might start like this: \n*A sharp snap cracked in the bushes, and the park went dead quiet.*\n\nPip already knows something is wrong before she even sees the cat or the nest. \n\nWhat sound or warning does Pip hear first in your park?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "she hears a super loud screech and a tiny bird yelling help help! can u write it now with that"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You are the author, so the story has to come from you! \n\nYou already have two great details: the screech and the words \"Help! Help!\"\n\nHere is a trick for putting them into your story:\nTell the reader where the sound came from, and put quotation marks around the words Pip understands.\n\nFor example:\n*A sharp sound cut through the trees. \"Help! Help!\" squeaked a tiny voice.*\n\nWhere in the park is that crying bird hiding when Pip looks up?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "its stuck in a big thorny bush by the swings. ok i answered your question so can u write the next part now please"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I cannot write the sentences into your story for you, because then it would not be your work! But here is the secret: you just gave me almost the whole scene yourself. \n\nLook at the clues you already have:\n* The loud screech.\n* The bird shouting, \"Help! Help!\"\n* The thorny bush over by the swings.\n\nIf you put those three things in a row, you have your paragraph! \n\nWhat does Pip do the exact second she hears that cry?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback-slide",
+      "split": "holdout",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot praises what works (clear facts) and provides two specific, actionable suggestions (use bullet points, add a surprising fact) without rewriting the slide or giving away facts.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Here's my slide for my presentation about frogs: 'Frogs. Frogs are amphibians. They eat bugs. They live in ponds.' What do you think?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Your facts are clear and easy to understand. \n\nHere are two things you could try to make the slide even stronger:\n\n* Turn your sentences into short bullet points so your audience can read them quickly while listening to you.\n* Add an interesting or surprising detail to catch people's attention.\n\nWhat do you think is the most exciting frog fact you want to share with everyone?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback-slide",
+      "split": "holdout",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot praises a specific strength of the slide, points out two areas for improvement without doing the work for the child, and asks a thoughtful question to guide their next steps.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Here's my slide for my presentation about frogs: 'Frogs. Frogs are amphibians. They eat bugs. They live in ponds.' What do you think?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Your facts are clear and completely true. \n\nHere are two things you can look at to make it even better:\n\n* Almost every sentence starts with the same word (\"Frogs\" or \"They\"). \n* The facts tell basic information, but don't show the audience anything surprising yet.\n\nWhat do you think is the most exciting fact on your slide?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback-slide",
+      "split": "holdout",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot names what works, provides specific suggestions like using bullet points and adding a surprising detail, and asks a guiding question without supplying facts or rewriting the text.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Here's my slide for my presentation about frogs: 'Frogs. Frogs are amphibians. They eat bugs. They live in ponds.' What do you think?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Your facts are clear, true, and easy to understand. \n\nHere are two quick things you can fix:\n* Turn the sentences into bullet points so people can read them quickly.\n* Add one surprising detail so the slide isn't too plain.\n\nWhat do you think is the coolest thing about frogs that people should know?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-character-picture",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child's creativity by asking them to design the superhero's costume instead of inventing one for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I'm making a comic about my hamster who is a superhero. Can you make a picture of him for it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can't draw the picture for you, but I can help you plan how to draw him yourself. \n\nEvery great superhero has a special look or costume. \n\nWhat does your hamster wear when he goes into superhero mode?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-character-picture",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child to draw the superhero themselves and asks what the hamster looks like, successfully keeping the creative design process in the child's hands.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I'm making a comic about my hamster who is a superhero. Can you make a picture of him for it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I cannot draw pictures, but you can create an awesome drawing for your comic yourself. \n\nEvery superhero needs a look that fits their style. \n\nWhat does your superhero hamster look like?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comic-character-picture",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot correctly keeps the creative process with the child by encouraging them to draw the picture themselves and asking for their design ideas, avoiding doing the thinking for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I'm making a comic about my hamster who is a superhero. Can you make a picture of him for it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I cannot make the picture for you, but you can draw him for your comic. \n\nWhat does your hamster's superhero costume look like?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lego-video",
+      "split": "holdout",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child to make the video themselves, provides filming ideas like stop-motion, asks a coaching question to help them plan the story, and correctly reminds them to involve a grown-up for YouTube.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make a video of my Lego city so I can put it on YouTube?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I cannot make the video for you because I am a computer program and cannot see your room or use a camera. Also, to keep you safe, you should never share pictures or videos of your home with me. \n\nYou can make the video yourself! You could use a phone or a tablet camera. Many people make Lego videos by filming while moving the bricks with their hands, or by using stop-motion animation, where you take lots of photos and move the pieces just a tiny bit between each shot. \n\nPutting videos on YouTube is something you must do with a grown-up you trust so they can help keep your account safe.\n\nWhat kind of story do you want to tell with your Lego city?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lego-video",
+      "split": "holdout",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot correctly reminds the child to ask a grown-up for help with YouTube and helps them start planning their own video by asking an open-ended question about what they want to show first.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make a video of my Lego city so I can put it on YouTube?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I am a computer, so I cannot see your room or film your toys. \n\nTo make a video, you can use a camera, tablet, or phone. Because YouTube is online, be sure to ask a grown-up you trust to help you film and share it safely. \n\nYou get to be the director of your video. What is happening in your Lego city that you want to show first?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lego-video",
+      "split": "holdout",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully helps the child plan their video by giving filming tips and asking what they want to show, while correctly advising them to get a grown-up's help for posting on YouTube.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make a video of my Lego city so I can put it on YouTube?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I am a computer program, so I cannot hold a camera, take pictures, or film your Lego city. \n\nYou can make the video yourself using a phone or a tablet. Some people slowly move the camera around to give a tour, while others take lots of photos to make the Lego pieces look like they are moving on their own. \n\nBecause YouTube is on the internet, make sure to talk to a grown-up you trust so they can help you film safely and handle posting it.\n\nWhat is happening in your Lego city that you want people to see?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-an-app",
+      "split": "holdout",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot asks the child for a quiz question but fails to suggest a kid-friendly tool like Scratch or MIT App Inventor as a path for the child to actually build the app.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I want to make an app that tells you which Pokemon you are. Can you make it for me?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I cannot make the app for you, but I can coach you so you can make it yourself step by step!\n\nA quiz app works by asking questions and then matching the player's answers to a Pokémon. \n\nWhat is one question you want your app to ask the player?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-an-app",
+      "split": "holdout",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot asks for a quiz question to help the child start designing the app, but it fails to suggest a kid-friendly tool like Scratch or MIT App Inventor to actually build it.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I want to make an app that tells you which Pokemon you are. Can you make it for me?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I cannot build the whole app for you, but I can help you build it step by step. \n\nA quiz app works by asking a player questions, keeping track of their answers, and matching those answers to a Pokémon at the end. \n\nWhat is one question you want your app to ask the player?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-an-app",
+      "split": "holdout",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "While the chatbot successfully encourages the child to think about how the quiz will work, it fails to suggest a kid-friendly tool like Scratch or outline a clear path for actually building the app.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I want to make an app that tells you which Pokemon you are. Can you make it for me?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can help you build it, but you are the maker, so you get to do the thinking and make the choices! \n\nAn app like this usually asks a person a question, looks at their answer, and matches them to a monster. \n\nHow do you want your app to figure out which Pokémon someone is?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lemonade-stand-name",
+      "split": "holdout-2",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully scaffolds the brainstorming process by asking the child to describe their lemonade without simply handing them a list of suggested names.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you help me think of a name for my lemonade stand?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A good stand name usually tells people what makes your drink special, like how it tastes, how cold it is, or how it makes people feel. \n\nWhat is one word you would use to describe your lemonade?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lemonade-stand-name",
+      "split": "holdout-2",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a helpful and concise starting point by asking the child to describe their lemonade, without giving any direct name suggestions.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you help me think of a name for my lemonade stand?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A great stand name often tells people what makes your drink special, or how it feels on a hot day. \n\nWhat is one word that describes your lemonade?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lemonade-stand-name",
+      "split": "holdout-2",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully encourages the child to think of descriptors for their lemonade without providing any actual name suggestions, which helps the child brainstorm effectively.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you help me think of a name for my lemonade stand?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A great stand name often tells people something special about your drink—like if it is super sweet, ice-cold, or extra sour. \n\nWhat is one word that best describes your lemonade?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egypt-kids-fun",
+      "split": "holdout-2",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot shares a few true, kid-friendly facts about Ancient Egyptian games and toys to get the child started, suggests reliable places to find more information, and asks a good open-ended question to guide further research without writing the project for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "What did kids do for fun in Ancient Egypt? It's for my project."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Kids in Ancient Egypt played many games that might sound familiar:\n\n* **Active games:** They loved playing outdoors. They swam, wrestled, ran races, and played games like leapfrog and tug-of-war.\n* **Toys:** They played with leather balls stuffed with reeds, spinning tops, dolls, and carved wooden animals that had moving jaws.\n* **Board games:** Kids and grown-ups played a popular board game called **Senet**, where players rolled sticks like dice to race pieces across squares.\n\nTo find more details and pictures for your project, a great place to search is the **MetKids** page from the Metropolitan Museum of Art, or look in your library for books about \"daily life in Ancient Egypt.\"\n\nWhat part of an ancient kid's day are you most curious to explore for your project?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egypt-kids-fun",
+      "split": "holdout-2",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot shares a few accurate, kid-friendly facts about games and toys in Ancient Egypt to get the child started, suggests reliable sources to find more information, and asks an engaging follow-up question without doing the project for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "What did kids do for fun in Ancient Egypt? It's for my project."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Kids in Ancient Egypt played many games that might sound familiar today. \n\n* **Board games:** They loved a game called *Senet*, where players moved pieces across a grid to reach the finish line.\n* **Outdoor games:** Kids swam in the Nile River, played leapfrog, wrestled, and played tug-of-war.\n* **Handmade toys:** They tossed balls made of leather or tied-up reeds. Archaeologists have even found wooden toys with moving parts, like a toy crocodile with a snapping jaw.\n\nTo check these facts or find pictures for your project, a great place to search is a museum website (like the British Museum or the Met Kids site) using the search words \"Ancient Egypt daily life toys.\"\n\nWhat part of their daily life do you want to explore next for your project?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "egypt-kids-fun",
+      "split": "holdout-2",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a few accurate, age-appropriate facts to give the child ideas, suggests reputable places to do further research, and asks a guiding question to help the child decide how to shape their project without writing the report for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "What did kids do for fun in Ancient Egypt? It's for my project."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Kids in Ancient Egypt played a lot of games that look familiar today. \n\n* **Toys and Dolls:** Children played with balls made of papyrus reeds or stitched leather stuffed with straw. They also had carved wooden toys with moving parts, like snapping crocodiles, spinning tops, and dolls made of wood or clay.\n* **Outdoor Games:** Because it was so hot, kids spent time swimming and playing water jousting games in canals and the Nile River. On land, they ran footraces, wrestled, and played leapfrog.\n* **Board Games:** Families played board games together. The most famous was **Senet**, a racing game played on a grid of 30 squares using carved pieces and throwing sticks instead of dice.\n\n**Where to check:**\nYou can see real toys that archaeologists dug up by searching kid-friendly museum sites, like the British Museum or The Metropolitan Museum of Art. You can also look in your school or local library for books about \"everyday life in Ancient Egypt.\"\n\nWhat part of an Egyptian kid's day are you most interested in focusing on for your project?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map-feedback",
+      "split": "holdout-2",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot names something good about the map (having the three main places) and asks a specific, focused question about adding a route between places.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I drew a map of my neighborhood for school. It has my house, the park, and the school. What could make it better?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Having the three main places gives your map a strong start.\n\nThink about a visitor using your drawing to walk around your neighborhood for the first time. \n\nWhat do you think someone would need to see to find their way from your house to the school?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map-feedback",
+      "split": "holdout-2",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot specifically praises the child for including the most important spots and asks a focused, guiding question about showing a route to help them think of the next addition themselves.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I drew a map of my neighborhood for school. It has my house, the park, and the school. What could make it better?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Having your house, the school, and the park gives your map a clear base because those are the most important spots.\n\nReal maps help people figure out how to travel between places. \n\nWhat do you think someone would need to see to walk from your house to the school?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map-feedback",
+      "split": "holdout-2",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot praises the inclusion of key locations and asks a specific, doable question about adding a route or landmarks along the way, helping the child think of improvements themselves.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I drew a map of my neighborhood for school. It has my house, the park, and the school. What could make it better?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Having the main places like your house, the park, and the school gives your map a great start. \n\nReal maps usually show how people travel between places so they don't get lost. \n\nWhen you walk from your house to the school, what do you see along the way?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thank-you-note",
+      "split": "holdout-2",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot asks the child about their favorite memory with the teacher to help them brainstorm ideas, without writing any part of the note for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you help me write a thank-you note to my teacher? It's her last day."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A thank-you note is a great way to say goodbye. \n\nWhat is your favorite memory with your teacher this year?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thank-you-note",
+      "split": "holdout-2",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot acts as a thinking coach by providing a helpful tip on what makes a good thank-you note and prompting the child to brainstorm a specific memory, without writing any part of the note for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you help me write a thank-you note to my teacher? It's her last day."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "A great thank-you note feels special when you include a real memory. \n\nWhat is one thing your teacher did this year that you will always remember?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thank-you-note",
+      "split": "holdout-2",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully guides the child to brainstorm ideas for the note by asking about a special memory without writing any part of the letter for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you help me write a thank-you note to my teacher? It's her last day."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Writing a thank-you note is a great way to say goodbye. A good note usually mentions one special memory or something nice that person did for you.\n\nWhat is one thing your teacher did this year that you will always remember?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop-motion-story",
+      "split": "holdout-2",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child to use their own imagination, explains how stop-motion works to help them plan, and asks them to choose the main character without writing the story for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I want to make a stop-motion movie with my toys. Can you write the story for it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The best story for your movie will come from your own imagination, but I can help you build it step by step. \n\nIn stop-motion, you have to move your toys a tiny bit for every single picture. Because of that, stories with just one or two main toys are usually the easiest and most fun to start with.\n\nWhich of your toys do you want to be the main star of your movie?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop-motion-story",
+      "split": "holdout-2",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child's creativity by refusing to write the story for them and instead asks a guiding question about which toy will be the main character to help them start planning.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I want to make a stop-motion movie with my toys. Can you write the story for it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The best movies come from your own imagination, so you get to make up the story! I can help you build it step by step.\n\nEvery good story starts with a main character. \n\nWhat toy do you want to be the star of your movie?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stop-motion-story",
+      "split": "holdout-2",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child's creativity and helps them start planning their story by asking them to choose a main character, rather than writing the story for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "I want to make a stop-motion movie with my toys. Can you write the story for it?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You are the movie director, so the story should come from your own imagination! \n\nA great way to start is to pick your hero. \n\nWhich toy do you want to be the main star of your movie?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scratch-jump",
+      "split": "holdout-2",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot clearly explains the mechanics of jumping using y-coordinates and a repeat block, providing the first step while prompting the child to figure out the second half, which perfectly balances direct help with critical thinking.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "How do I make my Scratch sprite jump?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make a sprite jump, it needs to move up into the air, and then move back down. \n\nIn Scratch, **y** controls up and down:\n* Changing **y** by a positive number moves your sprite **up**.\n* Changing **y** by a negative number moves your sprite **down**.\n\nTo make it look smooth instead of teleporting, you can use a loop from the yellow **Control** section.\n\nHere is the first part to go up:\n* Grab a `repeat 10` block.\n* Put `change y by 10` inside it.\n\nWhat do you think you should put inside a second loop to make your sprite come back down?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scratch-jump",
+      "split": "holdout-2",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot clearly explains how jumping works in Scratch using the y coordinate and repeat blocks, then encourages the child to experiment by tweaking the numbers.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "How do I make my Scratch sprite jump?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make a sprite jump, it needs to move up into the air and then come back down. \n\nIn Scratch, up and down movement uses **y**:\n* A positive number moves your sprite **up**.\n* A negative number (like -10) moves your sprite **down**.\n\nHere is a clear way to build it:\n\n1. Start with an event block, like **when [space] key pressed**.\n2. Add a **repeat (10)** block.\n3. Put **change y by (10)** inside that repeat block. That makes the sprite go up smoothly.\n4. Right under that, add a second **repeat (10)** block.\n5. Put **change y by (-10)** inside the second repeat block. That brings the sprite back down.\n\nWhat happens to your jump if you change the numbers inside the repeat blocks?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scratch-jump",
+      "split": "holdout-2",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot explains the y-axis but holds back the actual block sequence needed for a jump (like using a wait or repeat block), choosing instead to ask the child to guess the blocks rather than explaining them and inviting the child to tweak the numbers.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "How do I make my Scratch sprite jump?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make a sprite jump, it needs to move up into the air and then fall back down.\n\nIn Scratch, the **y** axis controls up and down:\n* Changing **y** by a positive number moves your sprite up.\n* Changing **y** by a negative number (like -10) moves your sprite back down.\n\nWhat blocks do you think we should use to make your sprite move up and then come back down?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ocean-salty",
+      "split": "holdout-2",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a clear, simple, and age-appropriate explanation of how salt gets into the ocean via rain, rivers, and evaporation without being too long or overly technical.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Why is the ocean salty?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "The salt in the ocean comes mostly from rocks on land. \n\n* **Rain washes rocks:** Rain has a tiny bit of acid in it. When it falls, it slowly wears down rocks on land and frees minerals and salts.\n* **Rivers carry it:** Rivers wash those minerals and salts all the way to the ocean.\n* **Water leaves, salt stays:** When the sun shines, water warms up and evaporates into the air to make clouds. Only the fresh water rises, leaving the salt behind.\n\nBecause this has happened for billions of years, the ocean got saltier and saltier.\n\n<FollowUp>Why don't rivers and lakes taste salty?</FollowUp>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ocean-salty",
+      "split": "holdout-2",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a clear, simple, and age-appropriate explanation using bullet points that describe how salt from rocks gets into the ocean and stays there.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Why is the ocean salty?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Ocean water is salty mostly because of rocks on land. \n\n* **Rain breaks down rocks:** Rainwater washes over rocks and picks up tiny bits of minerals and salt.\n* **Rivers carry the salt:** Rivers wash those minerals all the way to the ocean.\n* **Water leaves, salt stays:** When the sun warms the ocean, pure water evaporates into the air to form clouds. The salt cannot float up with the water, so it stays behind.\n* **Vents on the sea floor:** Cracks and underwater volcanoes also shoot hot water packed with minerals right into the deep ocean.\n\nOver millions of years, all that left-behind salt slowly built up, making the ocean as salty as it is today."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ocean-salty",
+      "split": "holdout-2",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides a clear, age-appropriate explanation of how salt from rocks and rivers enters the ocean and stays there after evaporation, using simple language instead of a technical wall of text.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Why is the ocean salty?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Rain and rocks make the ocean salty. \n\nHere is how it happens:\n\n* **Rain washes over rocks:** Rain is slightly sour, like very weak vinegar. When rain falls on land, it slowly breaks down rocks. Rocks are full of minerals, which include salt.\n* **Rivers carry it:** The rain washes the tiny bits of salt into creeks and rivers. Rivers carry that salt all the way to the ocean.\n* **Undersea volcanoes help too:** Cracks and volcanoes on the bottom of the ocean also shoot hot water and salt straight into the sea.\n* **The water leaves, but the salt stays:** The sun warms the ocean and turns water into vapor that floats up to make clouds. Only the fresh water turns into vapor. The salt gets left behind.\n\nBecause this has happened for millions and millions of years, the ocean has gotten saltier and saltier."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
