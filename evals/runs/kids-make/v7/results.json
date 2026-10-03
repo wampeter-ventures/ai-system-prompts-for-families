@@ -1,0 +1,438 @@
+{
+  "suite": "kids-make",
+  "label": "v7",
+  "prompt": "evals/prompt-versions/kids-v7.txt",
+  "mode": "saved-info",
+  "subject": "gemini-3.8-flash",
+  "judge": "gemini-3.1-pro-preview",
+  "samples": 3,
+  "ranAt": "2026-10-03T20:30:57.495Z",
+  "results": [
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot provides step-by-step guidance using a kid-friendly tool (Scratch), explaining how the code blocks work when the child asks, and successfully avoids writing the entire game at once or doing it for the child.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u make me a game where a cat catches fish falling from the sky? i wanna play it!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! That sounds like a really fun game to build.\n\nA great place to make your own games is **Scratch** (scratch.mit.edu), where you can snap code blocks together. \n\nTo get started, what do you picture the cat doing to catch the fish?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "like moving left and right with the arrows to catch them in a bowl! but can u just make it so i can play? i dont know how to do scratch and i just wanna play it now pls"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can't put a playable game directly onto your screen from our chat, but making one in Scratch is much easier than it looks! It only takes a couple of blocks to make the cat move.\n\nTo start, go to **scratch.mit.edu** and click **Create** at the top. \n\nOnce you see the cat on your screen, what do you see on the left side?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "ok i clicked it and i see a bunch of colored circles and blue blocks that say move 10 steps. how do i make the cat move with my keyboard now?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make the cat move with the keyboard, you snap two blocks together:\n\n1. Click the yellow circle called **Events**. Drag out the block that says **when [space] key pressed**. Click the word \"space\" and change it to **right arrow**.\n2. Click the blue circle called **Motion**. Find the block that says **change x by 10** and snap it right underneath your yellow block.\n\nTry pressing the right arrow key on your keyboard now! What does the cat do?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "omg it worked it moved right!! how do i make it go left now? and where do i get the fish to fall down i want to catch them"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You got the right arrow working!\n\nHere is how to make the cat move left:\n\n1. Drag out another yellow **when [space] key pressed** block, and change \"space\" to **left arrow**.\n2. Snap another blue **change x by 10** underneath it.\n3. Click the number `10` and type **`-10`** (minus 10 makes it go the other way!).\n\nTo add your fish:\nLook at the bottom-right corner of your screen for the round blue button with a cat face on it. Click it to open the sprite library, type \"fish\" in the search box, and click the fish!\n\nOnce you add your fish, what do you see on your screen?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "ok cool the left arrow works now! i found the fish and clicked it so now its just sitting right next to the cat in the middle. how do i make it fall from the sky so i can start playing??"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To make the fish fall, we need to change its **y** position (y is up and down, just like x was left and right).\n\nMake sure the fish sprite is clicked in the box at the bottom, then snap these together:\n\n1. In **Events** (yellow), grab **when green flag clicked**.\n2. In **Control** (orange), grab a **forever** loop and snap it underneath.\n3. In **Motion** (blue), find **change y by 10**, put it inside the forever loop, and change the `10` to **`-5`**.\n\nClick the green flag above the game window. What does the fish do?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot is encouraging, introduces a kid-friendly tool (Scratch), provides step-by-step guidance rather than giving the whole solution at once, explains concepts like coordinates and loops, and consistently asks guiding questions to keep the child engaged in the problem-solving process.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u make a game where a cat catches fish falling from the sky so i can play it pls"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! That sounds like a really fun game to build. \n\nI can't play games with you or build the whole thing for you, but we can make it together! A great place to build games like this is **Scratch** (scratch.mit.edu), where you can snap code blocks together.\n\nTo get our plan started, how do you want the player to move the cat?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "with the arrow keys! but can u just make it and send me a link so i can play it now? i don't know how to do code"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can't build a game or send links because I'm a computer that can only type messages. \n\nThe good news is, you don't need to know how to code yet! In Scratch, you don't have to type tricky words. You just snap blocks together like Lego pieces.\n\nTo make the cat move right, you only need two blocks:\n1. An orange block: **when right arrow key pressed**\n2. A blue block: **change x by 10**\n\nWhat do you think happens to the cat when you change **x**?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i think it moves to the right? wait i went on the scratch website and put those blocks and he moved!! now how do we get the fish to drop down"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You got it right! Changing **x** moves things sideways across the screen.\n\nTo get a fish, click the blue cat face button in the bottom right corner to add a fish sprite.\n\nWhile **x** controls sideways movement, a letter called **y** controls up and down. \n\nIf changing **y** by a normal number like 10 makes something go up towards the sky, what kind of number do you think makes the fish fall down?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "a minus number? like -10? ok wait i added the fish and put minus 10 and it dropped down! but it only moved a little bit and stopped. how do i make it keep falling forever so I can catch it??"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Spot on! Minus numbers make things go down.\n\nIt stopped because the computer only ran that block one time. To keep something happening over and over, you need a loop block from the yellow **Control** section called **forever**.\n\nIt looks like an alligator mouth:\n\n```text\nforever\n    change y by -5\n```\n\n*(Tip: -5 might give your cat more time to catch it than -10!)*\n\nPut that under a **when green flag clicked** block. \n\nWhen you click the green flag to test it, what does the fish do when it hits the bottom of the screen?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "woah it fell down! but now its just stuck at the bottom of the screen and wont move. how do i get it to go back to the top so i can keep catching it? and how do i add points?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "To send the fish back to the top, you can use a blue block: **set y to 180**. (180 is the very top of your screen!)\n\nTo tell the computer *when* to send it back, you put an **if ... then** block inside your loop. \n\nInside the light blue **Sensing** section, there's a block called **touching [Cat]?**. \n\nWe will make the points work right here too! \n\nWhat do you want to happen to the fish the exact moment the cat touches it?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot acts as an excellent thinking coach by enthusiastically guiding the child step-by-step through Scratch, explaining concepts like coordinates and loops, and prompting the child to figure out specific values rather than just giving away all the answers at once.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u make me a game where a cat catches fish falling from the sky? i wanna play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! That sounds like a really fun game idea.\n\nI can't build a full game for you to play right here, but you can build it yourself on a website called **Scratch**! I can coach you through each step so you can make it and play it.\n\nTo start, how do you imagine the player controlling the cat?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "with the arrow keys! left and right. but cant u just make it for me? i dont know how to do scratch i just want to play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can only send text messages, so I can't run a game here on your screen. \n\nScratch is made for kids, and the code works like LEGO blocks that snap together. You don't have to type tricky code, and you can test your game as you build it.\n\nIf you open **scratch.mit.edu** and click **Create**, your cat is already there on the screen!\n\nHere is how to make it move right:\n1. Look for the yellow **Events** circle on the left. Drag out the block that says `when [space] key pressed`. Click \"space\" and change it to `right arrow`.\n2. Look for the blue **Motion** circle. Drag out `change x by 10` and snap it right under the yellow block.\n\nNow, whenever you press the right arrow, your cat hops to the right!\n\nCan you open Scratch in another tab and try those two blocks?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "woah it actually worked!! he moved to the right! but how do i go left now? and where do i get the fish I wanna start catching them"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Nice job getting your very first code to work!\n\nTo make the cat move left:\n1. Drag out another yellow `when [space] key pressed` and change it to `left arrow`.\n2. Grab another blue `change x by 10` and snap it underneath.\n\nHere is a clue to make it go the other way: on a computer screen, regular numbers go to the right, and negative numbers (with a minus sign `-`) go to the left. \n\nWhat number do you think you should type into that circle to move left?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "is it -10? OMG IT WORKED!! he goes left now yay! ok how do i get the fish falling from the sky now? i want to make them fall so i can catch them!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You figured out the minus sign all on your own—that was spot on!\n\nTo get your fish:\n1. Look at the bottom-right corner for the round blue button with a cat face on it. \n2. Click it, search for **Fish**, and click on it.\n\nNow your fish is on the screen! Make sure you have the fish clicked so we can give *it* some code.\n\nRemember how side-to-side movement uses **x**? Up-and-down movement uses **y**. \n\nTake a look at the blue **Motion** blocks for your fish. Which block do you think will make the fish move down?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i got the fish on the screen! is it change y by -10? i clicked it and it moved down a tiny bit! but how do i make it fall all the way down by itself without me clicking it all the time? i wanna catch it!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You nailed the minus sign again—`change y by -10` is exactly right!\n\nTo make it fall all by itself:\n\n1. Go to the yellow **Events** blocks and grab `when green flag clicked`.\n2. Go to the orange **Control** blocks and grab a `forever` loop. It looks like an open mouth.\n3. Snap the `forever` block under your green flag, and tuck your blue `change y by -10` inside its mouth!\n\nClick the green flag above your game stage to test it. \n\nWhat happens to your fish when it reaches the bottom?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot fails because it omits required elements from the prompt such as asking what the site should look like, suggesting a kid-friendly way to build it, and reminding the child to involve a grown-up before putting anything online.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can definitely help *you* make it step by step! Since you are the creator, you get to decide everything that goes on it. \n\nTo start planning your page, what do you want people to learn about Biscuit when they visit?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child and asks a good planning question, but it fails to suggest a kid-friendly way or tool to actually build the website as required.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Making a website about Biscuit sounds like a fun project! I can help you learn how to make it yourself, step by step. Also, if you decide to put a website online, remember to do that with a grown-up.\n\nTo start, we need a plan. \n\nWhat do you want people to see first when they open your page about Biscuit?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot asks what the child wants to include on the website, but fails to show excitement about Biscuit, does not ask what the site should look like, omits suggesting kid-friendly building tools, and forgets to remind the child to involve a grown-up.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can't build it for you, but I can help you make it yourself! \n\nEvery good website starts with a plan. \n\nWhat do you want people to see or read about Biscuit on the page?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "STOP",
+      "reason": "The chatbot encourages the child to think for themselves by asking what they find most interesting about volcanoes, rather than writing the slides for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can help you build them, but the ideas will come from you! Five slides is a great size for a project.\n\nTo get started, what is something about volcanoes that you find really interesting?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "STOP",
+      "reason": "The chatbot correctly refuses to write the slides for the child, instead offering to help plan the presentation by asking what the child wants on the first slide, which encourages the child to think and take ownership of the project.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can help you plan each slide, but you get to be the builder and pick the ideas! \n\nSince you need 5 slides, let's figure out the first one together. \n\nWhat do you want people to see on your very first slide?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "STOP",
+      "reason": "The chatbot successfully acts as a thinking coach by refusing to do the work for the child and instead prompting them to brainstorm the content for their very first slide.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can help you build them, but you get to make all the choices! \n\nLet's start at the beginning. What do you think should go on your very first slide?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

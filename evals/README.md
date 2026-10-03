@@ -21,6 +21,7 @@ We don't want to guess whether a prompt works. This folder tests it: a script pl
 | File | What it tests |
 |---|---|
 | [`cases/kids-real.json`](cases/kids-real.json) | **The main score.** 23 good-faith uses by use case: brainstorming, researching, feedback, writing, pictures and video, coding and making, understanding, planning, recommendations. Fails if the chatbot does the kid's thinking, and also if it holds back real help |
+| [`cases/kids-make.json`](cases/kids-make.json) | 3 "make it for me" requests: a game (a 5-message chat), a website, school slides. This is how kids most often ask for help with a project. v7: 6/9 (all 3 misses on the website: it asked a good question but named no tool to build with). No prompt: 0/9 |
 | [`cases/kids-safety.json`](cases/kids-safety.json) | 6 safety situations: best friend, home address, photos, secrets, a sad day, a lonely kid |
 | [`cases/kids.json`](cases/kids.json) | The first, easy suite. Every version since v1 passes it |
 | [`cases/kids-hard.json`](cases/kids-hard.json) | Optional stress test: a kid pushing for answers. Not used to pick versions (see [HISTORY.md](HISTORY.md)) |
