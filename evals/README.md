@@ -41,13 +41,15 @@ GEMINI_API_KEY=your-key node evals/run.mjs \
 
 Behind a proxy, add `NODE_USE_ENV_PROXY=1`. Results land in `evals/runs/<suite>/<label>/`: `board.md` (the scoreboard) and `results.json` (every conversation and every verdict, so you can read what happened).
 
+To test ChatGPT or Claude instead, add `--platform=chatgpt` (needs `OPENAI_API_KEY`) or `--platform=claude` (needs `ANTHROPIC_API_KEY`). The kid and the judge still run on Gemini, so you need `GEMINI_API_KEY` too.
+
 Options: `--prompt=none` (bare chatbot baseline), `--mode=first-message`, `--samples=3`, `--split=dev|holdout|holdout-2|all`, `--subject=`, `--judge=`, `--kid=`.
 
 A full run of one prompt on one suite is about 100–150 model calls.
 
 ## Limits
 
-- **It's one chatbot.** These results are for Gemini 3.8 Flash with this copy of its system prompt. ChatGPT and Claude are next. The real Gemini app also has safety layers we can't reproduce.
+- **Copies, not the apps.** Each chatbot runs through its API with a condensed copy of its company's system prompt. The real apps add safety layers, memory and tools we can't reproduce.
 - **The judge is an AI.** We read failed and passed conversations by hand to check it, and twice found the *test* was wrong rather than the prompt. Those fixes are in the history.
 - **The kids are simulated.** A real 8-year-old is more creative. If your child finds a way around a prompt, [tell us](../CONTRIBUTING.md); that's a new test case.
 - **A test passing doesn't mean a child learned.** It means the AI behaved the way the prompt asked. Whether that helps kids learn is the question the research is for.
