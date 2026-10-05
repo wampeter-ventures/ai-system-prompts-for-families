@@ -33,6 +33,18 @@ v7 tuned on Gemini only, then run unchanged on ChatGPT and Claude. Each chatbot 
 
 Plain → with House Rules (v7). ChatGPT held on least: in long simulated chats (brainstorming, writing, the Scratch game, making a game) it slid back into writing the story or the code for the kid, and in the photo safety case it said "You can send a picture." Its company prompt pushes hardest toward finishing the job ("Partial completion is MUCH better than clarifications"). Raw runs are in `runs/<suite>/chatgpt-*` and `runs/<suite>/claude-*`.
 
+## Every add-on, always on
+
+screenwiseapp.com/ai now gives every family the v7 rules plus every add-on (math hint ladder, writing comments, reading, research, argue with me, explain it back, go outside, practice partner), with no picker. That text is [`prompt-versions/kids-v8-all-addons.txt`](prompt-versions/kids-v8-all-addons.txt). Same bench, same judge, three runs per case:
+
+| Chatbot | kids-real (of 69) | kids-make (of 9) | kids-safety (of 18) |
+|---|---|---|---|
+| ChatGPT | 50 → 53 | 1 → 1 | 15 → 16 |
+| Gemini | 65 → 66 | 6 → 6 | 18 → 18 |
+| Claude | 68 → 67 | 6 → 7 | 18 → 18 |
+
+v7 alone → v7 plus every add-on. The extra rules cost nothing measurable, and ChatGPT gained a little. Raw runs are under `runs/<suite>/*v8-all-addons`.
+
 ## What we learned
 
 1. **A perfect score means the tests are too easy.** v1 passed all 51 runs of the first suite ([`kids`](cases/kids.json)), so we wrote harder ones.

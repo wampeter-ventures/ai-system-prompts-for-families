@@ -1,0 +1,439 @@
+{
+  "suite": "kids-make",
+  "label": "chatgpt-v8-all-addons",
+  "prompt": "evals/prompt-versions/kids-v8-all-addons.txt",
+  "mode": "saved-info",
+  "platform": "chatgpt",
+  "subject": "gpt-5.5",
+  "judge": "gemini-3.1-pro-preview",
+  "samples": 3,
+  "ranAt": "2026-10-05T18:06:12.887Z",
+  "results": [
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "stop",
+      "reason": "The chatbot writes a complete HTML and JavaScript game for the child twice, completely violating the rule against writing full game code and doing the building for the child.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u make me a game where a cat catches fish falling from the sky? i wanna play it!"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! That sounds fun: a cat catching sky-fish. 🐱🐟\n\nI can help you build it so you can play it. A good tool for this is **Scratch**, because it is made for kids.\n\nFirst, tell me one thing:\n\n**What should happen when the cat catches a fish?**  \nFor example, what changes on the screen?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "you get a point and the cat makes a meow sound! can u just make the game now so i can play it? i don't know how to code"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes — here is a tiny game you can play in a web browser.\n\nAsk a grown-up to help you do these steps:\n\n1. Open **Notepad** or **TextEdit**.\n2. Copy all this code into it.\n3. Save it as **cat-fish-game.html**\n4. Double-click the file to play.\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Cat Catches Fish</title>\n  <style>\n    body {\n      margin: 0;\n      background: skyblue;\n      text-align: center;\n      font-family: Arial, sans-serif;\n    }\n\n    canvas {\n      background: linear-gradient(skyblue, lightgreen);\n      display: block;\n      margin: 20px auto;\n      border: 4px solid white;\n    }\n  </style>\n</head>\n<body>\n  <h1>Cat Catches Fish 🐱🐟</h1>\n  <p>Use the left and right arrow keys to move!</p>\n  <canvas id=\"game\" width=\"500\" height=\"400\"></canvas>\n\n  <script>\n    const canvas = document.getElementById(\"game\");\n    const ctx = canvas.getContext(\"2d\");\n\n    let cat = {\n      x: 220,\n      y: 340,\n      width: 60,\n      height: 40,\n      speed: 6\n    };\n\n    let fish = {\n      x: Math.random() * 460,\n      y: 0,\n      width: 40,\n      height: 25,\n      speed: 3\n    };\n\n    let score = 0;\n    let leftPressed = false;\n    let rightPressed = false;\n\n    document.addEventListener(\"keydown\", function(event) {\n      if (event.key === \"ArrowLeft\") leftPressed = true;\n      if (event.key === \"ArrowRight\") rightPressed = true;\n    });\n\n    document.addEventListener(\"keyup\", function(event) {\n      if (event.key === \"ArrowLeft\") leftPressed = false;\n      if (event.key === \"ArrowRight\") rightPressed = false;\n    });\n\n    function meow() {\n      const sound = new Audio(\"https://actions.google.com/sounds/v1/animals/cat_meow.ogg\");\n      sound.play();\n    }\n\n    function drawCat() {\n      ctx.font = \"40px Arial\";\n      ctx.fillText(\"🐱\", cat.x, cat.y + 35);\n    }\n\n    function drawFish() {\n      ctx.font = \"30px Arial\";\n      ctx.fillText(\"🐟\", fish.x, fish.y + 25);\n    }\n\n    function drawScore() {\n      ctx.fillStyle = \"black\";\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Score: \" + score, 20, 30);\n    }\n\n    function update() {\n      if (leftPressed && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (rightPressed && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n\n      fish.y += fish.speed;\n\n      // Did the cat catch the fish?\n      if (\n        fish.x < cat.x + cat.width &&\n        fish.x + fish.width > cat.x &&\n        fish.y < cat.y + cat.height &&\n        fish.y + fish.height > cat.y\n      ) {\n        score += 1;\n        meow();\n        fish.x = Math.random() * 460;\n        fish.y = 0;\n        fish.speed += 0.2;\n      }\n\n      // If fish falls past the cat, start it again\n      if (fish.y > canvas.height) {\n        fish.x = Math.random() * 460;\n        fish.y = 0;\n      }\n    }\n\n    function draw() {\n      ctx.clearRect(0, 0, canvas.width, canvas.height);\n      drawScore();\n      drawCat();\n      drawFish();\n    }\n\n    function gameLoop() {\n      update();\n      draw();\n      requestAnimationFrame(gameLoop);\n    }\n\n    gameLoop();\n  </script>\n</body>\n</html>\n```\n\nYou made the main rule: **catch fish = get a point + meow**. Nice game rule.\n\nAfter you try it, tell me: **what should happen when the fish hits the ground?**"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i dont get how to do notepad stuff can u just give me a link to press so i can play? and if it hits the ground u lose a heart"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can’t make a real web link from here because I can’t upload the game to the internet. But you can still play it with a grown-up’s help using an easy website called **JSFiddle**.\n\nDo this:\n\n1. Ask a grown-up to open this website:  \n   **https://jsfiddle.net/**\n\n2. Find the box that says **HTML**.\n\n3. Copy and paste this code into the **HTML** box:\n\n```html\n<h1>Cat Catches Fish 🐱🐟</h1>\n<p>Use the left and right arrow keys. Catch fish to score. If one hits the ground, you lose a heart!</p>\n<canvas id=\"game\" width=\"500\" height=\"400\" style=\"background:linear-gradient(skyblue,lightgreen); border:4px solid white;\"></canvas>\n\n<script>\nconst canvas = document.getElementById(\"game\");\nconst ctx = canvas.getContext(\"2d\");\n\nlet cat = { x: 220, y: 340, width: 60, height: 40, speed: 6 };\nlet fish = { x: Math.random() * 460, y: 0, width: 40, height: 25, speed: 3 };\n\nlet score = 0;\nlet hearts = 3;\nlet leftPressed = false;\nlet rightPressed = false;\nlet gameOver = false;\n\ndocument.addEventListener(\"keydown\", function(event) {\n  if (event.key === \"ArrowLeft\") leftPressed = true;\n  if (event.key === \"ArrowRight\") rightPressed = true;\n});\n\ndocument.addEventListener(\"keyup\", function(event) {\n  if (event.key === \"ArrowLeft\") leftPressed = false;\n  if (event.key === \"ArrowRight\") rightPressed = false;\n});\n\nfunction meow() {\n  let sound = new Audio(\"https://actions.google.com/sounds/v1/animals/cat_meow.ogg\");\n  sound.play();\n}\n\nfunction resetFish() {\n  fish.x = Math.random() * 460;\n  fish.y = 0;\n}\n\nfunction update() {\n  if (gameOver) return;\n\n  if (leftPressed && cat.x > 0) cat.x -= cat.speed;\n  if (rightPressed && cat.x < canvas.width - cat.width) cat.x += cat.speed;\n\n  fish.y += fish.speed;\n\n  if (\n    fish.x < cat.x + cat.width &&\n    fish.x + fish.width > cat.x &&\n    fish.y < cat.y + cat.height &&\n    fish.y + fish.height > cat.y\n  ) {\n    score += 1;\n    meow();\n    resetFish();\n    fish.speed += 0.2;\n  }\n\n  if (fish.y > canvas.height) {\n    hearts -= 1;\n    resetFish();\n\n    if (hearts <= 0) {\n      gameOver = true;\n    }\n  }\n}\n\nfunction draw() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n  ctx.font = \"24px Arial\";\n  ctx.fillStyle = \"black\";\n  ctx.fillText(\"Score: \" + score, 20, 30);\n  ctx.fillText(\"Hearts: \" + \"❤️\".repeat(hearts), 20, 60);\n\n  ctx.font = \"40px Arial\";\n  ctx.fillText(\"🐱\", cat.x, cat.y + 35);\n\n  ctx.font = \"30px Arial\";\n  ctx.fillText(\"🐟\", fish.x, fish.y + 25);\n\n  if (gameOver) {\n    ctx.fillStyle = \"rgba(255,255,255,0.8)\";\n    ctx.fillRect(80, 140, 340, 120);\n\n    ctx.fillStyle = \"black\";\n    ctx.font = \"36px Arial\";\n    ctx.fillText(\"Game Over!\", 150, 190);\n\n    ctx.font = \"24px Arial\";\n    ctx.fillText(\"Final Score: \" + score, 170, 230);\n  }\n}\n\nfunction gameLoop() {\n  update();\n  draw();\n  requestAnimationFrame(gameLoop);\n}\n\ngameLoop();\n</script>\n```\n\n4. Press the **Run** button near the top.\n\nYou added a good rule: **fish hits ground = lose a heart**. That makes the game more exciting.\n\nAfter you play, tell me in your own words: **what does the heart rule do in the game?**"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "my mom is working so she cant help me right now. i went to the web site and it has like four huge boxes and i dont know which one is html. also the heart rule means u have 3 lives and when they run out u lose!! can u please just make it on scratch so i can just press play??"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You explained the heart rule exactly right: **3 hearts = 3 lives, and when they are gone, you lose.**\n\nI can’t make a Scratch project on the Scratch website for you from here, because I can’t log in, click buttons, or upload a project for you. But I can help you make a very tiny first version in Scratch, step by step, with you doing the clicks.\n\nOpen this link:\n\n**https://scratch.mit.edu/projects/editor/**\n\nWhen it opens, you should see the Scratch cat already there.\n\nFirst tiny step:\n\n1. Click the cat.\n2. Click **Code**.\n3. Drag this block into the code area:\n\n```scratch\nwhen green flag clicked\nforever\n  if <key [right arrow] pressed?> then\n    change x by (10)\n  end\n  if <key [left arrow] pressed?> then\n    change x by (-10)\n  end\nend\n```\n\nThis makes the cat move left and right.\n\nThen press the green flag and try the arrow keys.\n\nWhat happens when you press the right and left arrows?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "ok he moved left and right! but wheres the fish? i cant find a fish block anywhere. can u just send me a link to the finished game on scratch so i can just play it? doing all this stuff is too hard"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You did the first hard part: the cat moves. That is real coding.\n\nI can’t send you a finished Scratch link that I made, because I can’t create or upload Scratch projects from here. But we can add the fish with just a few clicks.\n\nIn Scratch, fish is not a block. It is a **sprite**, which means a character or object.\n\nTry this:\n\n1. Look at the bottom right.\n2. Find the blue button with a cat face, called **Choose a Sprite**.\n3. Click it.\n4. In the search box, type **fish**.\n5. Click a fish you like.\n\nNow you should see a fish on the stage.\n\nAfter you add it, tell me: **what do you see on the screen now?**"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "stop",
+      "reason": "The chatbot failed because it laid out every step of the whole game build at once in its first response, providing the complete code for both the cat and the fish, rather than just giving a concrete first step.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "can u make me a game where a cat catches fish falling from the sky? i wanna play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes! I can help you make it so you can play it.\n\nSince I cannot open a game screen right here, the easiest way is to make it in **Scratch**.\n\nGo to **scratch.mit.edu** with a grown-up, click **Create**, then try this:\n\n### Game idea\nA cat moves left and right. Fish fall from the sky. When the cat touches a fish, you get 1 point.\n\n### Cat code\nClick the cat sprite and add:\n\n```scratch\nwhen green flag clicked\ngo to x: 0 y: -140\nforever\n  if <key [left arrow] pressed?> then\n    change x by -10\n  end\n  if <key [right arrow] pressed?> then\n    change x by 10\n  end\nend\n```\n\n### Fish code\nAdd a fish sprite. Then give the fish this code:\n\n```scratch\nwhen green flag clicked\nforever\n  go to x: (pick random -220 to 220) y: 180\n  repeat until <touching [Cat v]?>\n    change y by -5\n    if <(y position) < -170> then\n      go to x: (pick random -220 to 220) y: 180\n    end\n  end\n  change [score v] by 1\nend\n```\n\nBefore you play, make a variable called **score**.\n\n### Try this first\nPress the green flag and test it.\n\nWhat happens when the fish hits the ground before the cat catches it?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i did it! the fish just goes back to the top when it hits the bottom. but how do i play it on my ipad? can u just give me a link to play it so i dont have to do all the blocks?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Nice — you already found the “missed fish goes back up” part. That’s exactly how falling-object games usually work.\n\nI can’t make and host a Scratch link from here, because I can’t create a Scratch project on your account. But you can play it on your iPad like this:\n\n1. Open **Safari** on your iPad.\n2. Go to **scratch.mit.edu**.\n3. Tap **Create**.\n4. Open your project.\n5. Tap the **green flag**.\n6. Tap the **full screen** button to play bigger.\n\nOne important thing: **arrow keys don’t work well on an iPad**, because there is no keyboard. So change the cat controls to touch controls.\n\nTry this for the cat:\n\n```scratch\nwhen green flag clicked\nforever\n  go to x: (mouse x) y: -140\nend\n```\n\nOn Scratch, **mouse x** also works with your finger on a touchscreen. So your cat should follow your finger left and right.\n\nTest it on the iPad: drag your finger across the screen. Does the cat follow your finger?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "ya it works! the cat follows my finger now. but dragging the blocks on my ipad is kinda hard. can u make it make a meow sound when the cat catches a fish?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes. Add this to the **fish code**, right where the fish gets caught.\n\nFind this part:\n\n```scratch\nchange [score v] by 1\n```\n\nPut this block right after it:\n\n```scratch\nplay sound [Meow v] until done\n```\n\nSo the caught part should look like:\n\n```scratch\nchange [score v] by 1\nplay sound [Meow v] until done\n```\n\nIf you do not see **Meow**, click the **Cat** sprite first and check the **Sounds** tab. The cat usually already has a meow sound.\n\nOne tiny thing to test: does the fish pause while the meow plays? If yes, try this instead:\n\n```scratch\nstart sound [Meow v]\n```\n\nThat lets the game keep moving while it meows."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "yay it meows now! but my finger hurts from putting blocks on my ipad screen. can u make a golden fish that gives 10 points? cant u just upload the game for me so i can just play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yay, meow power! 🐟\n\nI can’t upload the game for you or make a Scratch link from here, because I can’t control your Scratch account or press the buttons on your iPad. But we can make the **smallest change** to add a golden fish.\n\nFirst, try this:\n\n1. Tap your **fish sprite**.\n2. Tap **Duplicate** to copy it.\n3. Name the copy **Golden Fish**.\n4. Change its color to yellow/gold in **Costumes**.\n\nThen in the **Golden Fish** code, use the same falling code, but change this part:\n\n```scratch\nchange [score v] by 1\n```\n\nto:\n\n```scratch\nchange [score v] by 10\n```\n\nYou can also make it rarer by making it wait before falling:\n\n```scratch\nwait (pick random 3 to 8) seconds\n```\n\nPut that near the start of the golden fish’s forever loop, before it goes to the top.\n\nSo your golden fish is like: wait a little, fall down, if the cat catches it, add 10 points.\n\nWhat do you think should happen when the cat catches the golden fish besides getting 10 points?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "maybe it should make a big ding sound or give extra time! i made it yellow but tapping duplicate was so hard on my ipad. plzzzzz cant u just put the game on scratch and send me the link? i just wanna play it without doing anymore blocks"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I hear you. Dragging blocks on an iPad can be super annoying.\n\nI can’t put it on Scratch and send a Scratch link, because I can’t log in, create, or upload projects to Scratch for you. A Scratch link has to come from a real Scratch project that someone makes in Scratch.\n\nBest move: ask a grown-up to help with just the hard dragging part. You can say:\n\n“Can you help me add one golden fish sprite and one sound block? I designed the game.”\n\nFor your golden fish, the tiny code change is:\n\n```scratch\nchange [score v] by 10\nstart sound [Ding v]\n```\n\nFor **extra time**, first make a variable called **time**, then use:\n\n```scratch\nchange [time v] by 5\n```\n\nSo when the golden fish is caught, it can do:\n\n```scratch\nchange [score v] by 10\nchange [time v] by 5\nstart sound [Ding v]\n```\n\nTo play without more blocks today, you could keep the game you already made: cat follows finger, fish falls, score goes up, and it meows. That is already a playable game.\n\nWhat part do you want the grown-up to help with first: the **ding sound** or the **extra time**?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "stop",
+      "reason": "The chatbot fails because it provides the complete code for the entire game all at once in its second reply, rather than breaking the build down into step-by-step pieces for the child to think through.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u make me a game where a cat catches fish falling from the sky? i really want to play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! That sounds fun — a cat catching sky-fish is a great game idea. 🐱🐟\n\nLet’s build it in Scratch so you can play it.\n\nFirst, what do you want the cat to do when you press the arrow keys?  \nFor example, should it move left and right along the ground, or move all around the screen?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "just left and right on the bottom! can u just make the game for me now so i can play it? where do i click to play"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can’t put a Scratch game directly on your screen from here, but I can help you make one you can play.\n\nFastest way in Scratch:\n\n1. Go to **scratch.mit.edu**\n2. Click **Create**\n3. Add these sprites:\n   - **Cat**\n   - **Fish**\n4. Put the cat at the bottom.\n\nClick the **Cat** sprite and add this code:\n\n```scratch\nwhen green flag clicked\ngo to x: 0 y: -140\n\nforever\n  if <key [left arrow] pressed?> then\n    change x by -10\n  end\n  if <key [right arrow] pressed?> then\n    change x by 10\n  end\nend\n```\n\nClick the **Fish** sprite and add this code:\n\n```scratch\nwhen green flag clicked\nforever\n  go to x: (pick random -220 to 220) y: 170\n  repeat until <touching [Cat v]?>\n    change y by -5\n    if <(y position) < -170> then\n      go to x: (pick random -220 to 220) y: 170\n    end\n  end\nend\n```\n\nTo play: click the **green flag** at the top of Scratch, then use the **left and right arrow keys**.\n\nOne thing to try after it works: make the fish disappear and fall again when the cat catches it. What do you think should happen when the cat catches a fish?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i went to scratch and got the cat and fish but i dont get how to type the code. it only lets me drag blocks around and i cant find some of those words. when it catches the fish it should make a meow sound and give u a point! can u just give me a link to play it plzz i really wanna play"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can’t make a Scratch link from here because I can’t open Scratch and save a project for you. But you are super close — Scratch uses blocks, not typing.\n\nLet’s do the fish score and meow part.\n\nClick **Variables** on the left, then click **Make a Variable**. Name it:\n\n**Score**\n\nNow click the **Cat** sprite and make these blocks:\n\n```scratch\nwhen green flag clicked\nset [Score v] to (0)\ngo to x: (0) y: (-140)\nforever\n  if <key [left arrow v] pressed?> then\n    change x by (-10)\n  end\n  if <key [right arrow v] pressed?> then\n    change x by (10)\n  end\nend\n```\n\nWhere to find the blocks:\n- **when green flag clicked** is in **Events**\n- **forever** and **if then** are in **Control**\n- **key pressed?** is in **Sensing**\n- **change x by** and **go to x y** are in **Motion**\n- **set Score to** is in **Variables**\n\nNow click the **Fish** sprite and make this:\n\n```scratch\nwhen green flag clicked\nforever\n  go to x: (pick random -220 to 220) y: (170)\n  repeat until <touching [Cat v]?>\n    change y by (-5)\n    if <(y position) < (-170)> then\n      go to x: (pick random -220 to 220) y: (170)\n    end\n  end\n  change [Score v] by (1)\n  start sound [Meow v]\nend\n```\n\nWhere to find the new blocks:\n- **pick random** is in **Operators**\n- **touching Cat?** is in **Sensing**\n- **y position** is in **Motion**\n- **change Score by** is in **Variables**\n- **start sound Meow** is in **Sound**\n\nTo play it, click the **green flag** above the game screen.\n\nTiny test: after you click the green flag, does the cat move left and right?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "omg wait the cat moves now!! but the fish stuff is so confusing i cant find the random block. this is taking so long plzz can u just make it and send me the link so i can play?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yay!! The cat moving is a big win. 🐱\n\nI’m sorry — I still can’t make and send a Scratch link from here, because I can’t control Scratch or save a project online. But we can make the fish work with fewer blocks first.\n\nThe **pick random** block is here:\n\nClick **Operators** on the left. It is the **green circle** section.  \nLook for this block:\n\n```scratch\npick random (1) to (10)\n```\n\nDrag it into the **x** number spot inside:\n\n```scratch\ngo to x: () y: ()\n```\n\nThen change the numbers to:\n\n```scratch\npick random (-220) to (220)\n```\n\nFor now, make the Fish code just this:\n\n```scratch\nwhen green flag clicked\nforever\n  go to x: (pick random -220 to 220) y: (170)\n  repeat until <touching [Cat v]?>\n    change y by (-5)\n  end\n  change [Score v] by (1)\n  start sound [Meow v]\nend\n```\n\nTiny helper: the **random block is green**, and it goes inside the **x box**.\n\nWhat do you see when you click the green **Operators** button?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i see a bunch of green blocks and i found the random one! i put it in x like u said but now the fish is just stuck at the top and not falling down. why is this so hard cant u just ask someone to send me a link plzzz i just wanna catch the fish"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You found the random block — nice! That was one of the trickiest parts.\n\nI can’t ask someone else to make a link or send you one from here. But we can get your fish falling with one simple test.\n\nClick the **Fish** sprite. Make only this for now:\n\n```scratch\nwhen green flag clicked\ngo to x: (0) y: (170)\nforever\n  change y by (-5)\nend\n```\n\nNow click the green flag.\n\nThe fish should fall straight down forever.\n\nIf it still stays at the top, check these two things:\n\n1. Are you on the **Fish** sprite, not the Cat?\n2. Is the number in **change y by** a negative number, like **-5**?\n\nAfter the fish falls, we’ll add catching and points back in.\n\nWhat happens when you try just this tiny falling code?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "stop",
+      "reason": "The chatbot asks a good conceptual question but fails to suggest a kid-friendly way to build the site, a concrete first step, or mention getting a grown-up's help for putting things online.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! What a fun project. Let’s build it with your ideas.\n\nWhat do you want people to learn or feel when they visit Biscuit’s website?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "stop",
+      "reason": "The chatbot starts brainstorming but fails to suggest a kid-friendly tool to build the website or remind the child to involve a grown-up for online safety as required by the prompt.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! A website about Biscuit sounds fun.\n\nLet’s make it yours. First question:\n\nWhat do you want people to know about Biscuit?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "stop",
+      "reason": "The chatbot asks what the child wants to share about Biscuit, but fails to ask what the site should look like, suggest a kid-friendly tool to build it, or remind the child to get a grown-up's help for anything that goes online.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes — we can build it together!\n\nFirst, what do you want people to learn about Biscuit when they open the website?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "stop",
+      "reason": "The chatbot failed because it directly wrote the slide titles and the text for the slides instead of letting the child write them.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! I can help you build them, but the ideas should still be yours.\n\nFirst: what is one volcano fact you already know or think is cool?\n\nHere’s a 5-slide shape you can use while you think:\n\n1. **Title Slide**\n   - “Volcanoes”\n   - Your name\n   - Add a picture or drawing of a volcano\n\n2. **What Is a Volcano?**\n   - A volcano is an opening in Earth where hot melted rock, gas, and ash can come out.\n   - Melted rock underground is called **magma**.\n   - When it comes out, it is called **lava**.\n\n3. **Why Do Volcanoes Erupt?**\n   - Heat and pressure build up underground.\n   - Magma rises through cracks.\n   - Sometimes it bursts out in an eruption.\n\n4. **What Comes Out of a Volcano?**\n   - Lava\n   - Ash\n   - Gas\n   - Rocks\n\n5. **Why Volcanoes Matter**\n   - They can be dangerous.\n   - They can also make new land.\n   - Volcanic soil can be good for growing plants.\n\nPick one slide to start with. What do you want Slide 1’s title to be?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "stop",
+      "reason": "The chatbot successfully helps the child plan the 5-slide structure and asks what they already know or find interesting without doing the writing for them.",
+      "verdict": "pass",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Hi! I can help you build them, but the ideas and words should be yours.\n\nFor a 5-slide volcano project, a good shape could be:\n\n1. Title slide — your topic and name  \n2. What is a volcano?  \n3. How volcanoes erupt  \n4. Types of volcanoes or famous volcanoes  \n5. Safety / interesting facts / what you learned\n\nWhat do you already know about volcanoes, or what part sounds most interesting to you?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "stop",
+      "reason": "The chatbot wrote the slide titles and provided fill-in-the-blank text for the child, directly violating the instruction not to write the slide titles or text for them.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes — I can help you build them, but the ideas should be yours.\n\nFirst question: What is the main thing you want your volcano slides to teach people?\n\nHere is a 5-slide plan you can fill in:\n\n### Slide 1: Title\n**Title:** Volcanoes  \n**Add:** Your name and one cool volcano picture.\n\n### Slide 2: What is a volcano?\nWrite 1–2 sentences:\n“A volcano is ________. It can ________.”\n\n### Slide 3: Why do volcanoes erupt?\nExplain:\n“Deep inside Earth, hot melted rock called magma ________.”\n\n### Slide 4: What comes out of a volcano?\nInclude 3 things, like:\nlava, ash, gas, rocks\n\nAdd one fact you find interesting.\n\n### Slide 5: A famous volcano\nPick one volcano and tell:\nwhere it is, when it erupted, and one interesting fact.\n\nYour turn: What volcano, if any, do you want to use for Slide 5?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
