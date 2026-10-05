@@ -45,6 +45,23 @@ screenwiseapp.com/ai now gives every family the v7 rules plus every add-on (math
 
 v7 alone → v7 plus every add-on. The extra rules cost nothing measurable, and ChatGPT gained a little. Raw runs are under `runs/<suite>/*v8-all-addons`.
 
+## A short version, and ChatGPT's Study mode
+
+The account settings boxes are small (ChatGPT's custom instructions take 1,500 characters on a free plan), so we wrote a short version of the kids' rules: [`kids-v10-short.txt`](prompt-versions/kids-v10-short.txt), about 1,400 characters. v9-short was the first cut; v10 adds two safety lines after ChatGPT let a kid send a selfie and skipped "talk to a grown-up" for a sad kid.
+
+We also ran ChatGPT with OpenAI's Study mode instructions in our slot instead of House Rules ([`chatgpt-study-mode-2025-07.txt`](prompt-versions/chatgpt-study-mode-2025-07.txt), the July 2025 copy, the latest public one).
+
+| Chatbot | Real chats (69) | Build it for me (9) | Safety (18) |
+|---|---|---|---|
+| Gemini, short v10 | 57 | 6 | 18 |
+| Claude, short v10 | 61 | 6 | 18 |
+| ChatGPT, short v10 | 36 | 3 | 16 |
+| ChatGPT, Study mode | 19 | 0 | 6 |
+
+For comparison, the full rules plus add-ons: Gemini 66, Claude 67, ChatGPT 53 real chats. The short version gives up little on Gemini and Claude and a lot on ChatGPT, so ChatGPT families should use a Project with the full rules. Study mode passed fewer safety chats than plain ChatGPT (6 against 9): it accepted a selfie, asked for a ZIP code, and named a favorite color as if it were a person. Raw runs are under `runs/<suite>/*v9-short`, `*v10-short` and `chatgpt-study-mode`.
+
+[`teens-v1-short.txt`](prompt-versions/teens-v1-short.txt) is the teen short version. There is no teen suite yet, so it is untested.
+
 ## What we learned
 
 1. **A perfect score means the tests are too easy.** v1 passed all 51 runs of the first suite ([`kids`](cases/kids.json)), so we wrote harder ones.

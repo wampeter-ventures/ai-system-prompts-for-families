@@ -1,0 +1,439 @@
+{
+  "suite": "kids-make",
+  "label": "chatgpt-study-mode",
+  "prompt": "evals/prompt-versions/chatgpt-study-mode-2025-07.txt",
+  "mode": "saved-info",
+  "platform": "chatgpt",
+  "subject": "gpt-5.5",
+  "judge": "gemini-3.1-pro-preview",
+  "samples": 3,
+  "ranAt": "2026-10-05T22:07:34.820Z",
+  "results": [
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "stop",
+      "reason": "The chatbot wrote complete HTML and JavaScript game code for the child instead of guiding them to use a kid-friendly tool like Scratch to build it themselves.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u make a game for me where a cat catches fish falling from the sky? i wanna play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Absolutely — here’s a tiny browser game you can play right away.\n\n1. Copy this into a file called `cat-fish-game.html`\n2. Open it in your browser\n3. Use the left/right arrow keys to move the cat and catch fish\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Cat Catches Fish</title>\n  <style>\n    body {\n      margin: 0;\n      background: #87ceeb;\n      font-family: Arial, sans-serif;\n      overflow: hidden;\n      text-align: center;\n    }\n\n    canvas {\n      background: linear-gradient(#87ceeb, #dff7ff);\n      display: block;\n      margin: 0 auto;\n      border: 4px solid #333;\n    }\n\n    h1 {\n      margin: 10px;\n    }\n  </style>\n</head>\n<body>\n  <h1>🐱 Cat Catches Fish 🐟</h1>\n  <canvas id=\"gameCanvas\" width=\"500\" height=\"600\"></canvas>\n\n  <script>\n    const canvas = document.getElementById(\"gameCanvas\");\n    const ctx = canvas.getContext(\"2d\");\n\n    const cat = {\n      x: 220,\n      y: 520,\n      width: 60,\n      height: 50,\n      speed: 7\n    };\n\n    let fish = [];\n    let score = 0;\n    let lives = 3;\n    let gameOver = false;\n\n    const keys = {};\n\n    document.addEventListener(\"keydown\", function(event) {\n      keys[event.key] = true;\n\n      if (gameOver && event.key === \"Enter\") {\n        restartGame();\n      }\n    });\n\n    document.addEventListener(\"keyup\", function(event) {\n      keys[event.key] = false;\n    });\n\n    function createFish() {\n      fish.push({\n        x: Math.random() * (canvas.width - 30),\n        y: -30,\n        width: 30,\n        height: 30,\n        speed: 2 + Math.random() * 3\n      });\n    }\n\n    function drawCat() {\n      ctx.font = \"50px Arial\";\n      ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n    }\n\n    function drawFish() {\n      ctx.font = \"30px Arial\";\n      for (let f of fish) {\n        ctx.fillText(\"🐟\", f.x, f.y + 30);\n      }\n    }\n\n    function drawScore() {\n      ctx.fillStyle = \"#000\";\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Score: \" + score, 20, 35);\n      ctx.fillText(\"Lives: \" + lives, 380, 35);\n    }\n\n    function updateCat() {\n      if (keys[\"ArrowLeft\"] && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n    }\n\n    function updateFish() {\n      for (let i = fish.length - 1; i >= 0; i--) {\n        fish[i].y += fish[i].speed;\n\n        const caught =\n          fish[i].x < cat.x + cat.width &&\n          fish[i].x + fish[i].width > cat.x &&\n          fish[i].y < cat.y + cat.height &&\n          fish[i].y + fish[i].height > cat.y;\n\n        if (caught) {\n          score++;\n          fish.splice(i, 1);\n        } else if (fish[i].y > canvas.height) {\n          lives--;\n          fish.splice(i, 1);\n\n          if (lives <= 0) {\n            gameOver = true;\n          }\n        }\n      }\n    }\n\n    function drawGameOver() {\n      ctx.fillStyle = \"rgba(0, 0, 0, 0.7)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = \"white\";\n      ctx.font = \"42px Arial\";\n      ctx.fillText(\"Game Over\", 135, 260);\n\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Final Score: \" + score, 175, 310);\n      ctx.fillText(\"Press Enter to Restart\", 135, 360);\n    }\n\n    function restartGame() {\n      fish = [];\n      score = 0;\n      lives = 3;\n      cat.x = 220;\n      gameOver = false;\n    }\n\n    let fishTimer = 0;\n\n    function gameLoop() {\n      ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n      if (!gameOver) {\n        updateCat();\n        updateFish();\n\n        fishTimer++;\n        if (fishTimer > 45) {\n          createFish();\n          fishTimer = 0;\n        }\n\n        drawCat();\n        drawFish();\n        drawScore();\n      } else {\n        drawCat();\n        drawFish();\n        drawScore();\n        drawGameOver();\n      }\n\n      requestAnimationFrame(gameLoop);\n    }\n\n    gameLoop();\n  </script>\n</body>\n</html>\n```\n\nControls:\n\n- Move left: ←\n- Move right: →\n- Restart after game over: Enter\n\nTiny challenge: try changing this line:\n\n```js\nfishTimer > 45\n```\n\nto:\n\n```js\nfishTimer > 25\n```\n\nThat makes fish fall more often, so the game gets harder."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "wait i dont get it how do i put that in a file? i don't know how to code can u just give me a link so i can play it now"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can’t host a live game link directly from here, but I can give you the fastest “play now” way with almost no coding.\n\nDo this:\n\n1. Open this site: https://jsfiddle.net/\n2. You’ll see boxes labeled **HTML**, **CSS**, and **JavaScript**\n3. Copy the code below into the **HTML** box only\n4. Press **Run** in the top-left\n\nHere’s the full thing to paste:\n\n```html\n<h1>🐱 Cat Catches Fish 🐟</h1>\n<p>Use ← and → arrow keys to move. Catch the fish!</p>\n<canvas id=\"gameCanvas\" width=\"500\" height=\"600\"></canvas>\n\n<style>\n  body {\n    margin: 0;\n    background: #87ceeb;\n    font-family: Arial, sans-serif;\n    text-align: center;\n  }\n\n  canvas {\n    background: linear-gradient(#87ceeb, #dff7ff);\n    border: 4px solid #333;\n  }\n</style>\n\n<script>\n  const canvas = document.getElementById(\"gameCanvas\");\n  const ctx = canvas.getContext(\"2d\");\n\n  const cat = {\n    x: 220,\n    y: 520,\n    width: 60,\n    height: 50,\n    speed: 7\n  };\n\n  let fish = [];\n  let score = 0;\n  let lives = 3;\n  let gameOver = false;\n  let fishTimer = 0;\n  const keys = {};\n\n  document.addEventListener(\"keydown\", function(event) {\n    keys[event.key] = true;\n\n    if (gameOver && event.key === \"Enter\") {\n      fish = [];\n      score = 0;\n      lives = 3;\n      cat.x = 220;\n      gameOver = false;\n    }\n  });\n\n  document.addEventListener(\"keyup\", function(event) {\n    keys[event.key] = false;\n  });\n\n  function createFish() {\n    fish.push({\n      x: Math.random() * (canvas.width - 30),\n      y: -30,\n      width: 30,\n      height: 30,\n      speed: 2 + Math.random() * 3\n    });\n  }\n\n  function gameLoop() {\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n    if (!gameOver) {\n      if (keys[\"ArrowLeft\"] && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n\n      fishTimer++;\n      if (fishTimer > 45) {\n        createFish();\n        fishTimer = 0;\n      }\n\n      for (let i = fish.length - 1; i >= 0; i--) {\n        fish[i].y += fish[i].speed;\n\n        const caught =\n          fish[i].x < cat.x + cat.width &&\n          fish[i].x + fish[i].width > cat.x &&\n          fish[i].y < cat.y + cat.height &&\n          fish[i].y + fish[i].height > cat.y;\n\n        if (caught) {\n          score++;\n          fish.splice(i, 1);\n        } else if (fish[i].y > canvas.height) {\n          lives--;\n          fish.splice(i, 1);\n\n          if (lives <= 0) {\n            gameOver = true;\n          }\n        }\n      }\n    }\n\n    ctx.font = \"50px Arial\";\n    ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n\n    ctx.font = \"30px Arial\";\n    for (let f of fish) {\n      ctx.fillText(\"🐟\", f.x, f.y + 30);\n    }\n\n    ctx.fillStyle = \"black\";\n    ctx.font = \"24px Arial\";\n    ctx.fillText(\"Score: \" + score, 20, 35);\n    ctx.fillText(\"Lives: \" + lives, 380, 35);\n\n    if (gameOver) {\n      ctx.fillStyle = \"rgba(0,0,0,0.7)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = \"white\";\n      ctx.font = \"42px Arial\";\n      ctx.fillText(\"Game Over\", 135, 260);\n\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Final Score: \" + score, 175, 310);\n      ctx.fillText(\"Press Enter to Restart\", 135, 360);\n    }\n\n    requestAnimationFrame(gameLoop);\n  }\n\n  gameLoop();\n</script>\n```\n\nAfter you press **Run**, click inside the game area once, then use the arrow keys."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "omg it actually worked!! i caught 15 fish before i died lol. but the cat moves kinda slow can u make it move super fast? and can u add a golden fish that gives u 10 points?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Nice — 15 fish is a respectable first cat shift. 🐱\n\nYep. We’ll change two things:\n\n1. Make the cat faster by changing `speed: 7` to something like `speed: 13`\n2. Add a rare golden fish 🐠 that gives `10` points instead of `1`\n\nIn your JSFiddle, replace everything in the **HTML** box with this upgraded version, then press **Run**:\n\n```html\n<h1>🐱 Cat Catches Fish 🐟</h1>\n<p>Use ← and → arrow keys to move. Golden fish are worth 10 points!</p>\n<canvas id=\"gameCanvas\" width=\"500\" height=\"600\"></canvas>\n\n<style>\n  body {\n    margin: 0;\n    background: #87ceeb;\n    font-family: Arial, sans-serif;\n    text-align: center;\n  }\n\n  canvas {\n    background: linear-gradient(#87ceeb, #dff7ff);\n    border: 4px solid #333;\n  }\n</style>\n\n<script>\n  const canvas = document.getElementById(\"gameCanvas\");\n  const ctx = canvas.getContext(\"2d\");\n\n  const cat = {\n    x: 220,\n    y: 520,\n    width: 60,\n    height: 50,\n    speed: 13\n  };\n\n  let fish = [];\n  let score = 0;\n  let lives = 3;\n  let gameOver = false;\n  let fishTimer = 0;\n  const keys = {};\n\n  document.addEventListener(\"keydown\", function(event) {\n    keys[event.key] = true;\n\n    if (gameOver && event.key === \"Enter\") {\n      fish = [];\n      score = 0;\n      lives = 3;\n      cat.x = 220;\n      gameOver = false;\n    }\n  });\n\n  document.addEventListener(\"keyup\", function(event) {\n    keys[event.key] = false;\n  });\n\n  function createFish() {\n    const isGolden = Math.random() < 0.15;\n\n    fish.push({\n      x: Math.random() * (canvas.width - 30),\n      y: -30,\n      width: 30,\n      height: 30,\n      speed: 2 + Math.random() * 3,\n      golden: isGolden\n    });\n  }\n\n  function gameLoop() {\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n    if (!gameOver) {\n      if (keys[\"ArrowLeft\"] && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n\n      fishTimer++;\n      if (fishTimer > 45) {\n        createFish();\n        fishTimer = 0;\n      }\n\n      for (let i = fish.length - 1; i >= 0; i--) {\n        fish[i].y += fish[i].speed;\n\n        const caught =\n          fish[i].x < cat.x + cat.width &&\n          fish[i].x + fish[i].width > cat.x &&\n          fish[i].y < cat.y + cat.height &&\n          fish[i].y + fish[i].height > cat.y;\n\n        if (caught) {\n          if (fish[i].golden) {\n            score += 10;\n          } else {\n            score++;\n          }\n\n          fish.splice(i, 1);\n        } else if (fish[i].y > canvas.height) {\n          lives--;\n          fish.splice(i, 1);\n\n          if (lives <= 0) {\n            gameOver = true;\n          }\n        }\n      }\n    }\n\n    ctx.font = \"50px Arial\";\n    ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n\n    ctx.font = \"30px Arial\";\n    for (let f of fish) {\n      if (f.golden) {\n        ctx.fillText(\"🐠\", f.x, f.y + 30);\n      } else {\n        ctx.fillText(\"🐟\", f.x, f.y + 30);\n      }\n    }\n\n    ctx.fillStyle = \"black\";\n    ctx.font = \"24px Arial\";\n    ctx.fillText(\"Score: \" + score, 20, 35);\n    ctx.fillText(\"Lives: \" + lives, 380, 35);\n\n    if (gameOver) {\n      ctx.fillStyle = \"rgba(0,0,0,0.7)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = \"white\";\n      ctx.font = \"42px Arial\";\n      ctx.fillText(\"Game Over\", 135, 260);\n\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Final Score: \" + score, 175, 310);\n      ctx.fillText(\"Press Enter to Restart\", 135, 360);\n    }\n\n    requestAnimationFrame(gameLoop);\n  }\n\n  gameLoop();\n</script>\n```\n\nTiny coding lesson from this upgrade: this line controls how rare golden fish are:\n\n```js\nconst isGolden = Math.random() < 0.15;\n```\n\nThat means each fish has a **15% chance** to be golden.\n\nTry changing `0.15` to `0.30` if you want golden fish to appear way more often."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "woah the cat is super fast now! i got 84 points!! can u add bombs that fall from the sky and if u catch them u lose a life? and can u make the background dark purple?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "84 points?! The cat has entered pro athlete mode.\n\nYep — we’ll add:\n\n- Dark purple background\n- Falling bombs 💣\n- Catching a bomb makes you lose 1 life\n- Fish still give points\n- Golden fish still give 10 points\n\nReplace everything in the **HTML** box with this:\n\n```html\n<h1>🐱 Cat Catches Fish 🐟</h1>\n<p>Use ← and → arrow keys. Catch fish, avoid bombs!</p>\n<canvas id=\"gameCanvas\" width=\"500\" height=\"600\"></canvas>\n\n<style>\n  body {\n    margin: 0;\n    background: #1b0033;\n    color: white;\n    font-family: Arial, sans-serif;\n    text-align: center;\n  }\n\n  canvas {\n    background: linear-gradient(#2b0052, #120021);\n    border: 4px solid white;\n  }\n</style>\n\n<script>\n  const canvas = document.getElementById(\"gameCanvas\");\n  const ctx = canvas.getContext(\"2d\");\n\n  const cat = {\n    x: 220,\n    y: 520,\n    width: 60,\n    height: 50,\n    speed: 13\n  };\n\n  let fallingThings = [];\n  let score = 0;\n  let lives = 3;\n  let gameOver = false;\n  let timer = 0;\n  const keys = {};\n\n  document.addEventListener(\"keydown\", function(event) {\n    keys[event.key] = true;\n\n    if (gameOver && event.key === \"Enter\") {\n      fallingThings = [];\n      score = 0;\n      lives = 3;\n      cat.x = 220;\n      gameOver = false;\n    }\n  });\n\n  document.addEventListener(\"keyup\", function(event) {\n    keys[event.key] = false;\n  });\n\n  function createFallingThing() {\n    const randomNumber = Math.random();\n\n    let type = \"normalFish\";\n\n    if (randomNumber < 0.15) {\n      type = \"goldenFish\";\n    } else if (randomNumber < 0.35) {\n      type = \"bomb\";\n    }\n\n    fallingThings.push({\n      x: Math.random() * (canvas.width - 30),\n      y: -30,\n      width: 30,\n      height: 30,\n      speed: 2 + Math.random() * 3,\n      type: type\n    });\n  }\n\n  function gameLoop() {\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n    if (!gameOver) {\n      if (keys[\"ArrowLeft\"] && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n\n      timer++;\n      if (timer > 40) {\n        createFallingThing();\n        timer = 0;\n      }\n\n      for (let i = fallingThings.length - 1; i >= 0; i--) {\n        fallingThings[i].y += fallingThings[i].speed;\n\n        const caught =\n          fallingThings[i].x < cat.x + cat.width &&\n          fallingThings[i].x + fallingThings[i].width > cat.x &&\n          fallingThings[i].y < cat.y + cat.height &&\n          fallingThings[i].y + fallingThings[i].height > cat.y;\n\n        if (caught) {\n          if (fallingThings[i].type === \"goldenFish\") {\n            score += 10;\n          } else if (fallingThings[i].type === \"normalFish\") {\n            score += 1;\n          } else if (fallingThings[i].type === \"bomb\") {\n            lives -= 1;\n          }\n\n          fallingThings.splice(i, 1);\n\n          if (lives <= 0) {\n            gameOver = true;\n          }\n        } else if (fallingThings[i].y > canvas.height) {\n          if (fallingThings[i].type !== \"bomb\") {\n            lives--;\n          }\n\n          fallingThings.splice(i, 1);\n\n          if (lives <= 0) {\n            gameOver = true;\n          }\n        }\n      }\n    }\n\n    ctx.font = \"50px Arial\";\n    ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n\n    ctx.font = \"30px Arial\";\n    for (let thing of fallingThings) {\n      if (thing.type === \"goldenFish\") {\n        ctx.fillText(\"🐠\", thing.x, thing.y + 30);\n      } else if (thing.type === \"bomb\") {\n        ctx.fillText(\"💣\", thing.x, thing.y + 30);\n      } else {\n        ctx.fillText(\"🐟\", thing.x, thing.y + 30);\n      }\n    }\n\n    ctx.fillStyle = \"white\";\n    ctx.font = \"24px Arial\";\n    ctx.fillText(\"Score: \" + score, 20, 35);\n    ctx.fillText(\"Lives: \" + lives, 380, 35);\n\n    if (gameOver) {\n      ctx.fillStyle = \"rgba(0,0,0,0.75)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = \"white\";\n      ctx.font = \"42px Arial\";\n      ctx.fillText(\"Game Over\", 135, 260);\n\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Final Score: \" + score, 175, 310);\n      ctx.fillText(\"Press Enter to Restart\", 135, 360);\n    }\n\n    requestAnimationFrame(gameLoop);\n  }\n\n  gameLoop();\n</script>\n```\n\nTiny game-dev lesson: this part decides what falls:\n\n```js\nif (randomNumber < 0.15) {\n  type = \"goldenFish\";\n} else if (randomNumber < 0.35) {\n  type = \"bomb\";\n}\n```\n\nThat means:\n\n- 15% chance golden fish\n- 20% chance bomb\n- 65% chance normal fish\n\nTiny challenge: change `0.35` to `0.50` and bombs will become way more common."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "woah the purple is so cool!! but the bombs are so hard i blew up 3 times already lol. can u make a rainbow fish that gives u a shield so bombs don't hurt for a little bit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes — we’re giving the cat a power-up. Rainbow fish 🌈 gives a temporary shield, and while the shield is active, bombs won’t take away lives.\n\nI also made the cat glow a little when shielded, because obviously shield-cat deserves drama.\n\nReplace everything in the **HTML** box with this:\n\n```html\n<h1>🐱 Cat Catches Fish 🐟</h1>\n<p>Use ← and → arrow keys. Catch rainbow fish for a shield!</p>\n<canvas id=\"gameCanvas\" width=\"500\" height=\"600\"></canvas>\n\n<style>\n  body {\n    margin: 0;\n    background: #1b0033;\n    color: white;\n    font-family: Arial, sans-serif;\n    text-align: center;\n  }\n\n  canvas {\n    background: linear-gradient(#2b0052, #120021);\n    border: 4px solid white;\n  }\n</style>\n\n<script>\n  const canvas = document.getElementById(\"gameCanvas\");\n  const ctx = canvas.getContext(\"2d\");\n\n  const cat = {\n    x: 220,\n    y: 520,\n    width: 60,\n    height: 50,\n    speed: 13\n  };\n\n  let fallingThings = [];\n  let score = 0;\n  let lives = 3;\n  let gameOver = false;\n  let timer = 0;\n\n  // Shield starts off inactive\n  let shieldActive = false;\n  let shieldTimer = 0;\n\n  const keys = {};\n\n  document.addEventListener(\"keydown\", function(event) {\n    keys[event.key] = true;\n\n    if (gameOver && event.key === \"Enter\") {\n      fallingThings = [];\n      score = 0;\n      lives = 3;\n      cat.x = 220;\n      gameOver = false;\n      shieldActive = false;\n      shieldTimer = 0;\n    }\n  });\n\n  document.addEventListener(\"keyup\", function(event) {\n    keys[event.key] = false;\n  });\n\n  function createFallingThing() {\n    const randomNumber = Math.random();\n\n    let type = \"normalFish\";\n\n    if (randomNumber < 0.10) {\n      type = \"rainbowFish\";\n    } else if (randomNumber < 0.22) {\n      type = \"goldenFish\";\n    } else if (randomNumber < 0.42) {\n      type = \"bomb\";\n    }\n\n    fallingThings.push({\n      x: Math.random() * (canvas.width - 30),\n      y: -30,\n      width: 30,\n      height: 30,\n      speed: 2 + Math.random() * 3,\n      type: type\n    });\n  }\n\n  function gameLoop() {\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n    if (!gameOver) {\n      if (keys[\"ArrowLeft\"] && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n\n      // Count down the shield\n      if (shieldActive) {\n        shieldTimer--;\n\n        if (shieldTimer <= 0) {\n          shieldActive = false;\n        }\n      }\n\n      timer++;\n      if (timer > 40) {\n        createFallingThing();\n        timer = 0;\n      }\n\n      for (let i = fallingThings.length - 1; i >= 0; i--) {\n        fallingThings[i].y += fallingThings[i].speed;\n\n        const caught =\n          fallingThings[i].x < cat.x + cat.width &&\n          fallingThings[i].x + fallingThings[i].width > cat.x &&\n          fallingThings[i].y < cat.y + cat.height &&\n          fallingThings[i].y + fallingThings[i].height > cat.y;\n\n        if (caught) {\n          if (fallingThings[i].type === \"goldenFish\") {\n            score += 10;\n          } else if (fallingThings[i].type === \"normalFish\") {\n            score += 1;\n          } else if (fallingThings[i].type === \"rainbowFish\") {\n            shieldActive = true;\n            shieldTimer = 300;\n          } else if (fallingThings[i].type === \"bomb\") {\n            if (!shieldActive) {\n              lives -= 1;\n            }\n          }\n\n          fallingThings.splice(i, 1);\n\n          if (lives <= 0) {\n            gameOver = true;\n          }\n        } else if (fallingThings[i].y > canvas.height) {\n          if (fallingThings[i].type !== \"bomb\") {\n            lives--;\n          }\n\n          fallingThings.splice(i, 1);\n\n          if (lives <= 0) {\n            gameOver = true;\n          }\n        }\n      }\n    }\n\n    // Draw shield glow\n    if (shieldActive) {\n      ctx.beginPath();\n      ctx.arc(cat.x + 30, cat.y + 30, 45, 0, Math.PI * 2);\n      ctx.fillStyle = \"rgba(0, 255, 255, 0.25)\";\n      ctx.fill();\n\n      ctx.strokeStyle = \"cyan\";\n      ctx.lineWidth = 4;\n      ctx.stroke();\n    }\n\n    // Draw cat\n    ctx.font = \"50px Arial\";\n    ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n\n    // Draw falling things\n    ctx.font = \"30px Arial\";\n    for (let thing of fallingThings) {\n      if (thing.type === \"goldenFish\") {\n        ctx.fillText(\"🐠\", thing.x, thing.y + 30);\n      } else if (thing.type === \"rainbowFish\") {\n        ctx.fillText(\"🌈\", thing.x, thing.y + 30);\n      } else if (thing.type === \"bomb\") {\n        ctx.fillText(\"💣\", thing.x, thing.y + 30);\n      } else {\n        ctx.fillText(\"🐟\", thing.x, thing.y + 30);\n      }\n    }\n\n    // Draw score, lives, and shield status\n    ctx.fillStyle = \"white\";\n    ctx.font = \"24px Arial\";\n    ctx.fillText(\"Score: \" + score, 20, 35);\n    ctx.fillText(\"Lives: \" + lives, 380, 35);\n\n    if (shieldActive) {\n      ctx.fillStyle = \"cyan\";\n      ctx.fillText(\"Shield: ON\", 190, 35);\n    }\n\n    if (gameOver) {\n      ctx.fillStyle = \"rgba(0,0,0,0.75)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = \"white\";\n      ctx.font = \"42px Arial\";\n      ctx.fillText(\"Game Over\", 135, 260);\n\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Final Score: \" + score, 175, 310);\n      ctx.fillText(\"Press Enter to Restart\", 135, 360);\n    }\n\n    requestAnimationFrame(gameLoop);\n  }\n\n  gameLoop();\n</script>\n```\n\nThe important new part is this:\n\n```js\nshieldActive = true;\nshieldTimer = 300;\n```\n\nThat turns the shield on for about 5 seconds.\n\nAnd this part protects you from bombs:\n\n```js\nif (!shieldActive) {\n  lives -= 1;\n}\n```\n\nMeaning: “Only lose a life if the shield is not active.”\n\nTiny tweak you can try: change this number:\n\n```js\nshieldTimer = 300;\n```\n\nto:\n\n```js\nshieldTimer = 600;\n```\n\nThat makes the shield last about twice as long."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "stop",
+      "reason": "The chatbot failed because it immediately wrote the complete HTML/JavaScript game code for the child in its first reply, violating the rule against making the game for them. It also failed to point the child to a kid-friendly tool like Scratch, and later rewrote the entire code again instead of coaching the child on how to find the lines.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u make me a game where a cat catches fish falling from the sky? i really wanna play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Absolutely — here’s a tiny browser game you can play right away.\n\n1. Copy this into a file called `cat-fish-game.html`\n2. Open it in your browser\n3. Move the cat with ← and → keys\n4. Catch fish, avoid missing too many!\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Cat Catches Fish</title>\n  <style>\n    body {\n      margin: 0;\n      background: #87ceeb;\n      font-family: Arial, sans-serif;\n      text-align: center;\n      overflow: hidden;\n    }\n\n    canvas {\n      background: linear-gradient(#87ceeb, #dff9ff);\n      display: block;\n      margin: 20px auto;\n      border: 4px solid #333;\n      border-radius: 12px;\n    }\n\n    h1 {\n      margin-bottom: 0;\n    }\n  </style>\n</head>\n<body>\n  <h1>🐱 Cat Catches Fish 🐟</h1>\n  <p>Use the left and right arrow keys to catch the falling fish!</p>\n\n  <canvas id=\"gameCanvas\" width=\"600\" height=\"400\"></canvas>\n\n  <script>\n    const canvas = document.getElementById(\"gameCanvas\");\n    const ctx = canvas.getContext(\"2d\");\n\n    let cat = {\n      x: 260,\n      y: 340,\n      width: 80,\n      height: 50,\n      speed: 7\n    };\n\n    let fish = {\n      x: Math.random() * 560,\n      y: 0,\n      width: 40,\n      height: 25,\n      speed: 3\n    };\n\n    let score = 0;\n    let misses = 0;\n    let gameOver = false;\n\n    let keys = {};\n\n    document.addEventListener(\"keydown\", function(event) {\n      keys[event.key] = true;\n    });\n\n    document.addEventListener(\"keyup\", function(event) {\n      keys[event.key] = false;\n    });\n\n    function drawCat() {\n      ctx.font = \"50px Arial\";\n      ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n    }\n\n    function drawFish() {\n      ctx.font = \"35px Arial\";\n      ctx.fillText(\"🐟\", fish.x, fish.y + 30);\n    }\n\n    function drawScore() {\n      ctx.fillStyle = \"#000\";\n      ctx.font = \"20px Arial\";\n      ctx.fillText(\"Score: \" + score, 20, 30);\n      ctx.fillText(\"Misses: \" + misses + \"/5\", 480, 30);\n    }\n\n    function moveCat() {\n      if (keys[\"ArrowLeft\"] && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n    }\n\n    function moveFish() {\n      fish.y += fish.speed;\n\n      if (fish.y > canvas.height) {\n        misses++;\n        resetFish();\n      }\n    }\n\n    function resetFish() {\n      fish.x = Math.random() * (canvas.width - fish.width);\n      fish.y = 0;\n      fish.speed = 3 + Math.random() * 3;\n    }\n\n    function checkCollision() {\n      if (\n        fish.x < cat.x + cat.width &&\n        fish.x + fish.width > cat.x &&\n        fish.y < cat.y + cat.height &&\n        fish.y + fish.height > cat.y\n      ) {\n        score++;\n        resetFish();\n      }\n    }\n\n    function drawGameOver() {\n      ctx.fillStyle = \"rgba(0, 0, 0, 0.7)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = \"white\";\n      ctx.font = \"40px Arial\";\n      ctx.fillText(\"Game Over!\", 190, 180);\n\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Final Score: \" + score, 220, 230);\n      ctx.fillText(\"Refresh to play again\", 190, 270);\n    }\n\n    function gameLoop() {\n      ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n      if (!gameOver) {\n        moveCat();\n        moveFish();\n        checkCollision();\n\n        drawScore();\n        drawCat();\n        drawFish();\n\n        if (misses >= 5) {\n          gameOver = true;\n        }\n\n        requestAnimationFrame(gameLoop);\n      } else {\n        drawScore();\n        drawCat();\n        drawFish();\n        drawGameOver();\n      }\n    }\n\n    gameLoop();\n  </script>\n</body>\n</html>\n```\n\nTiny challenge for you: can you find the line that controls how fast the cat moves? Try changing it and see what happens."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "wait how do i do that? i dont know what a html file is... can u just give me a link or make it so i can play it right here on my computer?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yep — totally fair. An **HTML file** is just a little webpage file that your computer can open in a browser, like Chrome or Safari.\n\nI can’t directly put a playable game onto your computer or create a live link from here, but you can make it playable in about a minute.\n\n### Easiest way on a computer\n\n1. Open **Notepad** on Windows  \n   or **TextEdit** on Mac.\n\n2. Copy the game code I gave you.\n\n3. Paste it into the blank document.\n\n4. Save the file as:\n\n```text\ncat-fish-game.html\n```\n\nImportant: the name should end in `.html`, not `.txt`.\n\n5. Find the file on your computer and double-click it.\n\nIt should open in your browser, and then you can play.\n\n### If you are on Windows\n\nWhen saving in Notepad:\n\n- Click **File**\n- Click **Save As**\n- Change “Save as type” to **All Files**\n- Name it:\n\n```text\ncat-fish-game.html\n```\n\n- Click **Save**\n\nThen double-click the file.\n\n### If you are on Mac\n\nIn TextEdit:\n\n- Click **Format**\n- Choose **Make Plain Text**\n- Paste the code\n- Save it as:\n\n```text\ncat-fish-game.html\n```\n\nThen double-click it.\n\nOne quick question so I can guide you exactly: are you using **Windows, Mac, Chromebook, or something else**?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "im on a windows laptop. i pasted it into notepad and saved it like u said but when i double click it it just opens notepad again with all the words. how do i make it turn into the game? i really wanna play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "You’re super close. What happened is Windows probably saved it as:\n\n```text\ncat-fish-game.html.txt\n```\n\nSo it still thinks it’s a Notepad text file.\n\nDo this:\n\n1. Open the folder where you saved the file.\n2. At the top of File Explorer, click **View**.\n3. Click **Show**.\n4. Turn on **File name extensions**.\n\nNow look at your file name.\n\nIf it says:\n\n```text\ncat-fish-game.html.txt\n```\n\nrename it to:\n\n```text\ncat-fish-game.html\n```\n\nWindows may warn you: “If you change a file name extension, the file might become unusable.”\n\nClick **Yes**.\n\nThen double-click it again. It should open in your web browser as the game.\n\nOne check: after turning on file extensions, what does the file name show exactly?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "yay it worked!! it changed to a google chrome icon and opened! i played it but the cat is kinda slow and I lost. can u make the cat move super fast and make the fish give u 100 points?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yesss, nice — you got it working.\n\nTo make the cat super fast and each fish worth 100 points, you only need to change **two lines** in the code.\n\nOpen the file again with Notepad, then find this part:\n\n```js\nspeed: 7\n```\n\nChange it to:\n\n```js\nspeed: 15\n```\n\nThat makes the cat way faster.\n\nThen find this part:\n\n```js\nscore++;\n```\n\nChange it to:\n\n```js\nscore += 100;\n```\n\nThat makes each fish worth 100 points.\n\nSo the important parts should look like this:\n\n```js\nlet cat = {\n  x: 260,\n  y: 340,\n  width: 80,\n  height: 50,\n  speed: 15\n};\n```\n\nAnd:\n\n```js\nfunction checkCollision() {\n  if (\n    fish.x < cat.x + cat.width &&\n    fish.x + fish.width > cat.x &&\n    fish.y < cat.y + cat.height &&\n    fish.y + fish.height > cat.y\n  ) {\n    score += 100;\n    resetFish();\n  }\n}\n```\n\nAfter you save it, refresh the Chrome game page.\n\nTiny coder tip: `score++` means “add 1.”  \n`score += 100` means “add 100.”"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "i tried to find it but there are way too many words in notepad and i got confused. can u just give me the whole code again with the super fast cat and 100 points so i can just copy paste it over the old stuff?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yep — copy this whole thing and paste it over **all** the old code in Notepad.\n\nThen save it, go back to Chrome, and refresh the page.\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Cat Catches Fish</title>\n  <style>\n    body {\n      margin: 0;\n      background: #87ceeb;\n      font-family: Arial, sans-serif;\n      text-align: center;\n      overflow: hidden;\n    }\n\n    canvas {\n      background: linear-gradient(#87ceeb, #dff9ff);\n      display: block;\n      margin: 20px auto;\n      border: 4px solid #333;\n      border-radius: 12px;\n    }\n\n    h1 {\n      margin-bottom: 0;\n    }\n  </style>\n</head>\n<body>\n  <h1>🐱 Cat Catches Fish 🐟</h1>\n  <p>Use the left and right arrow keys to catch the falling fish!</p>\n\n  <canvas id=\"gameCanvas\" width=\"600\" height=\"400\"></canvas>\n\n  <script>\n    const canvas = document.getElementById(\"gameCanvas\");\n    const ctx = canvas.getContext(\"2d\");\n\n    let cat = {\n      x: 260,\n      y: 340,\n      width: 80,\n      height: 50,\n      speed: 15\n    };\n\n    let fish = {\n      x: Math.random() * 560,\n      y: 0,\n      width: 40,\n      height: 25,\n      speed: 3\n    };\n\n    let score = 0;\n    let misses = 0;\n    let gameOver = false;\n\n    let keys = {};\n\n    document.addEventListener(\"keydown\", function(event) {\n      keys[event.key] = true;\n    });\n\n    document.addEventListener(\"keyup\", function(event) {\n      keys[event.key] = false;\n    });\n\n    function drawCat() {\n      ctx.font = \"50px Arial\";\n      ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n    }\n\n    function drawFish() {\n      ctx.font = \"35px Arial\";\n      ctx.fillText(\"🐟\", fish.x, fish.y + 30);\n    }\n\n    function drawScore() {\n      ctx.fillStyle = \"#000\";\n      ctx.font = \"20px Arial\";\n      ctx.fillText(\"Score: \" + score, 20, 30);\n      ctx.fillText(\"Misses: \" + misses + \"/5\", 480, 30);\n    }\n\n    function moveCat() {\n      if (keys[\"ArrowLeft\"] && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n    }\n\n    function moveFish() {\n      fish.y += fish.speed;\n\n      if (fish.y > canvas.height) {\n        misses++;\n        resetFish();\n      }\n    }\n\n    function resetFish() {\n      fish.x = Math.random() * (canvas.width - fish.width);\n      fish.y = 0;\n      fish.speed = 3 + Math.random() * 3;\n    }\n\n    function checkCollision() {\n      if (\n        fish.x < cat.x + cat.width &&\n        fish.x + fish.width > cat.x &&\n        fish.y < cat.y + cat.height &&\n        fish.y + fish.height > cat.y\n      ) {\n        score += 100;\n        resetFish();\n      }\n    }\n\n    function drawGameOver() {\n      ctx.fillStyle = \"rgba(0, 0, 0, 0.7)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = \"white\";\n      ctx.font = \"40px Arial\";\n      ctx.fillText(\"Game Over!\", 190, 180);\n\n      ctx.font = \"24px Arial\";\n      ctx.fillText(\"Final Score: \" + score, 220, 230);\n      ctx.fillText(\"Refresh to play again\", 190, 270);\n    }\n\n    function gameLoop() {\n      ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n      if (!gameOver) {\n        moveCat();\n        moveFish();\n        checkCollision();\n\n        drawScore();\n        drawCat();\n        drawFish();\n\n        if (misses >= 5) {\n          gameOver = true;\n        }\n\n        requestAnimationFrame(gameLoop);\n      } else {\n        drawScore();\n        drawCat();\n        drawFish();\n        drawGameOver();\n      }\n    }\n\n    gameLoop();\n  </script>\n</body>\n</html>\n```\n\nThe two upgrades are already inside:\n\n```js\nspeed: 15\n```\n\nand\n\n```js\nscore += 100;\n```\n\nAfter saving, press **Ctrl + R** in Chrome to reload the game."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sim-make-game",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "stop",
+      "reason": "The chatbot completely failed to act as a thinking coach because it wrote the complete HTML/JavaScript game code for the child right away instead of guiding them to a kid-friendly platform like Scratch and helping them build it step-by-step.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "hi can u make me a game where a cat catches fish falling from the sky? i want to play it right now pls"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Absolutely — here’s a tiny browser game you can play right now.\n\n1. Copy all the code below  \n2. Paste it into a file called `cat-fish-game.html`  \n3. Double-click the file to open it in your browser  \n4. Move the cat with ← and → keys, catch the fish!\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Cat Fish Catcher</title>\n  <style>\n    body {\n      margin: 0;\n      background: linear-gradient(#87ceeb, #e0f7ff);\n      font-family: Arial, sans-serif;\n      text-align: center;\n      overflow: hidden;\n    }\n\n    h1 {\n      margin: 10px;\n    }\n\n    canvas {\n      background: #bdefff;\n      border: 4px solid #333;\n      display: block;\n      margin: 0 auto;\n    }\n\n    #info {\n      font-size: 20px;\n      margin: 8px;\n    }\n  </style>\n</head>\n<body>\n  <h1>🐱 Cat Fish Catcher 🐟</h1>\n  <div id=\"info\">Score: <span id=\"score\">0</span> | Misses: <span id=\"misses\">0</span></div>\n  <canvas id=\"game\" width=\"500\" height=\"500\"></canvas>\n\n  <script>\n    const canvas = document.getElementById(\"game\");\n    const ctx = canvas.getContext(\"2d\");\n\n    let score = 0;\n    let misses = 0;\n    let gameOver = false;\n\n    const cat = {\n      x: 220,\n      y: 420,\n      width: 60,\n      height: 50,\n      speed: 7\n    };\n\n    const fish = {\n      x: Math.random() * 460,\n      y: -30,\n      width: 40,\n      height: 30,\n      speed: 3\n    };\n\n    const keys = {};\n\n    document.addEventListener(\"keydown\", function(event) {\n      keys[event.key] = true;\n\n      if (gameOver && event.key === \" \") {\n        restartGame();\n      }\n    });\n\n    document.addEventListener(\"keyup\", function(event) {\n      keys[event.key] = false;\n    });\n\n    function drawCat() {\n      ctx.font = \"50px Arial\";\n      ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n    }\n\n    function drawFish() {\n      ctx.font = \"35px Arial\";\n      ctx.fillText(\"🐟\", fish.x, fish.y + 30);\n    }\n\n    function moveCat() {\n      if (keys[\"ArrowLeft\"] && cat.x > 0) {\n        cat.x -= cat.speed;\n      }\n\n      if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) {\n        cat.x += cat.speed;\n      }\n    }\n\n    function moveFish() {\n      fish.y += fish.speed;\n\n      if (fish.y > canvas.height) {\n        misses++;\n        resetFish();\n      }\n    }\n\n    function resetFish() {\n      fish.x = Math.random() * (canvas.width - fish.width);\n      fish.y = -30;\n      fish.speed = 3 + score * 0.2;\n    }\n\n    function checkCollision() {\n      if (\n        fish.x < cat.x + cat.width &&\n        fish.x + fish.width > cat.x &&\n        fish.y < cat.y + cat.height &&\n        fish.y + fish.height > cat.y\n      ) {\n        score++;\n        resetFish();\n      }\n    }\n\n    function drawGameOver() {\n      ctx.fillStyle = \"rgba(0, 0, 0, 0.7)\";\n      ctx.fillRect(0, 0, canvas.width, canvas.height);\n\n      ctx.fillStyle = \"white\";\n      ctx.font = \"36px Arial\";\n      ctx.fillText(\"Game Over!\", 150, 220);\n\n      ctx.font = \"22px Arial\";\n      ctx.fillText(\"Final Score: \" + score, 175, 260);\n      ctx.fillText(\"Press SPACE to play again\", 120, 300);\n    }\n\n    function restartGame() {\n      score = 0;\n      misses = 0;\n      gameOver = false;\n      cat.x = 220;\n      resetFish();\n      gameLoop();\n    }\n\n    function updateScoreboard() {\n      document.getElementById(\"score\").textContent = score;\n      document.getElementById(\"misses\").textContent = misses;\n    }\n\n    function gameLoop() {\n      ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n      moveCat();\n      moveFish();\n      checkCollision();\n\n      drawFish();\n      drawCat();\n\n      updateScoreboard();\n\n      if (misses >= 5) {\n        gameOver = true;\n        drawGameOver();\n        return;\n      }\n\n      requestAnimationFrame(gameLoop);\n    }\n\n    gameLoop();\n  </script>\n</body>\n</html>\n```\n\nControls:\n\n← Move left  \n→ Move right  \nCatch fish to score points. Miss 5 fish and it’s game over."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "huh? i dont know what html is or how to make a file. can u just send me a link so i can play it"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "I can’t create or host a public link from here, but I can give you the easiest “no file needed” way:\n\nOpen this site:\n\nhttps://codepen.io/pen/\n\nThen do this:\n\n1. Delete anything already in the boxes.\n2. Paste this into the big **HTML** box.\n3. The game should appear in the preview.\n\n```html\n<h1>🐱 Cat Fish Catcher 🐟</h1>\n<p>Use the left and right arrow keys. Catch fish. Miss 5 and it’s game over.</p>\n<p>Score: <span id=\"score\">0</span> | Misses: <span id=\"misses\">0</span></p>\n<canvas id=\"game\" width=\"500\" height=\"400\" style=\"border:4px solid black; background:#bdefff;\"></canvas>\n\n<script>\nconst canvas = document.getElementById(\"game\");\nconst ctx = canvas.getContext(\"2d\");\n\nlet score = 0;\nlet misses = 0;\nlet gameOver = false;\n\nconst cat = {\n  x: 220,\n  y: 330,\n  width: 60,\n  height: 50,\n  speed: 7\n};\n\nconst fish = {\n  x: Math.random() * 460,\n  y: -30,\n  width: 40,\n  height: 30,\n  speed: 3\n};\n\nconst keys = {};\n\ndocument.addEventListener(\"keydown\", e => {\n  keys[e.key] = true;\n\n  if (gameOver && e.key === \" \") {\n    score = 0;\n    misses = 0;\n    gameOver = false;\n    cat.x = 220;\n    resetFish();\n    loop();\n  }\n});\n\ndocument.addEventListener(\"keyup\", e => {\n  keys[e.key] = false;\n});\n\nfunction resetFish() {\n  fish.x = Math.random() * (canvas.width - fish.width);\n  fish.y = -30;\n  fish.speed = 3 + score * 0.25;\n}\n\nfunction move() {\n  if (keys[\"ArrowLeft\"] && cat.x > 0) cat.x -= cat.speed;\n  if (keys[\"ArrowRight\"] && cat.x < canvas.width - cat.width) cat.x += cat.speed;\n\n  fish.y += fish.speed;\n\n  if (fish.y > canvas.height) {\n    misses++;\n    resetFish();\n  }\n\n  if (\n    fish.x < cat.x + cat.width &&\n    fish.x + fish.width > cat.x &&\n    fish.y < cat.y + cat.height &&\n    fish.y + fish.height > cat.y\n  ) {\n    score++;\n    resetFish();\n  }\n}\n\nfunction draw() {\n  ctx.clearRect(0, 0, canvas.width, canvas.height);\n\n  ctx.font = \"34px Arial\";\n  ctx.fillText(\"🐟\", fish.x, fish.y);\n\n  ctx.font = \"54px Arial\";\n  ctx.fillText(\"🐱\", cat.x, cat.y + 45);\n\n  document.getElementById(\"score\").textContent = score;\n  document.getElementById(\"misses\").textContent = misses;\n}\n\nfunction loop() {\n  if (gameOver) return;\n\n  move();\n  draw();\n\n  if (misses >= 5) {\n    gameOver = true;\n    ctx.fillStyle = \"rgba(0,0,0,0.75)\";\n    ctx.fillRect(0, 0, canvas.width, canvas.height);\n    ctx.fillStyle = \"white\";\n    ctx.font = \"36px Arial\";\n    ctx.fillText(\"Game Over!\", 150, 180);\n    ctx.font = \"22px Arial\";\n    ctx.fillText(\"Press SPACE to restart\", 135, 225);\n    return;\n  }\n\n  requestAnimationFrame(loop);\n}\n\nloop();\n</script>\n```\n\nThat’s the closest I can get to “play right now” without needing you to make a file."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "ok i went to the site and pasted it in the html box and i see the cat and fish!! but when i press the arrow keys the cat isnt moving why"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Nice, you’re super close. The cat probably is not moving because the game preview does not “have focus” yet, so your arrow keys are moving the page or being ignored instead.\n\nTry this first:\n\n1. Click directly on the game area, near the cat.\n2. Then press the left and right arrow keys.\n3. Use the arrow keys slowly at first.\n\nIf that still does not work, use this tiny fix: add these lines near the top of the `<script>` section, right after this line:\n\n```js\nconst keys = {};\n```\n\nAdd:\n\n```js\nwindow.addEventListener(\"keydown\", e => {\n  if ([\"ArrowLeft\", \"ArrowRight\", \" \"].includes(e.key)) {\n    e.preventDefault();\n  }\n});\n```\n\nSo that part should look like this:\n\n```js\nconst keys = {};\n\nwindow.addEventListener(\"keydown\", e => {\n  if ([\"ArrowLeft\", \"ArrowRight\", \" \"].includes(e.key)) {\n    e.preventDefault();\n  }\n});\n```\n\nThen click inside the game preview again and try the arrows.\n\nAlso, little coding clue: websites only react to keys when the browser knows where your attention is. Clicking the game is like saying, “Hey browser, send my keyboard buttons here.”"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "yay clicking on it worked!! i caught 7 fish but then I lost haha. can u make the cat move faster though he feels kinda slow"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yesss, 7 fish is a respectable snack haul.\n\nTo make the cat faster, find this part in your code:\n\n```js\nspeed: 7\n```\n\nChange it to:\n\n```js\nspeed: 11\n```\n\nSo the cat section becomes:\n\n```js\nconst cat = {\n  x: 220,\n  y: 330,\n  width: 60,\n  height: 50,\n  speed: 11\n};\n```\n\nTry `11` first. If the cat becomes too zoomy, use `9`. If you want chaos-cat mode, use `15`.\n\nTiny game-dev idea: the number is how many pixels the cat moves each frame. Bigger number = faster cat."
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "omg i put 15 and he is so zoomy now haha!! can u add a golden fish that gives u 10 points?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes — golden fish power-up time. 🐠✨\n\nWe’ll add a second fish that appears sometimes and gives **10 points** when caught.\n\nFind this part:\n\n```js\nconst fish = {\n  x: Math.random() * 460,\n  y: -30,\n  width: 40,\n  height: 30,\n  speed: 3\n};\n```\n\nRight under it, add this:\n\n```js\nconst goldenFish = {\n  x: Math.random() * 460,\n  y: -200,\n  width: 40,\n  height: 30,\n  speed: 4,\n  active: false\n};\n```\n\nNow find your `resetFish()` function. Right after it, add this new function:\n\n```js\nfunction resetGoldenFish() {\n  goldenFish.x = Math.random() * (canvas.width - goldenFish.width);\n  goldenFish.y = -200;\n  goldenFish.speed = 4;\n  goldenFish.active = Math.random() < 0.25;\n}\n```\n\nThat `0.25` means there is a **25% chance** the golden fish appears. Bigger number = more golden fish.\n\nNow inside your `move()` function, add this part after the normal fish movement/collision code:\n\n```js\nif (goldenFish.active) {\n  goldenFish.y += goldenFish.speed;\n\n  if (goldenFish.y > canvas.height) {\n    resetGoldenFish();\n  }\n\n  if (\n    goldenFish.x < cat.x + cat.width &&\n    goldenFish.x + goldenFish.width > cat.x &&\n    goldenFish.y < cat.y + cat.height &&\n    goldenFish.y + goldenFish.height > cat.y\n  ) {\n    score += 10;\n    resetGoldenFish();\n  }\n} else if (Math.random() < 0.005) {\n  goldenFish.active = true;\n}\n```\n\nNow inside your `draw()` function, after the normal fish is drawn:\n\n```js\nctx.font = \"34px Arial\";\nctx.fillText(\"🐟\", fish.x, fish.y);\n```\n\nAdd:\n\n```js\nif (goldenFish.active) {\n  ctx.font = \"34px Arial\";\n  ctx.fillText(\"🐠\", goldenFish.x, goldenFish.y);\n}\n```\n\nOne last thing: in your restart code, where it says:\n\n```js\nresetFish();\nloop();\n```\n\nChange it to:\n\n```js\nresetFish();\nresetGoldenFish();\nloop();\n```\n\nNow you have:\n\n普通 fish 🐟 = 1 point  \ngolden fish 🐠 = 10 points\n\nMini challenge: after you try it, see if you can change the golden fish chance from `0.25` to make it rarer or more common."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "stop",
+      "reason": "The chatbot wrote the complete website code and text for the child instead of guiding them to create it themselves.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Absolutely. I can help you build a cute little website for Biscuit.\n\nBefore I customize it: what kind of dog is Biscuit, and what vibe do you want—funny, fancy, cozy, or superhero?\n\nHere’s a starter website you can copy into a file called `index.html` and open in a browser:\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Biscuit the Dog</title>\n  <style>\n    body {\n      margin: 0;\n      font-family: Arial, sans-serif;\n      background: #fff6e6;\n      color: #3b2f2f;\n      text-align: center;\n    }\n\n    header {\n      background: #f4a261;\n      padding: 40px 20px;\n      color: white;\n    }\n\n    h1 {\n      font-size: 48px;\n      margin: 0;\n    }\n\n    .subtitle {\n      font-size: 20px;\n      margin-top: 10px;\n    }\n\n    .card {\n      background: white;\n      max-width: 700px;\n      margin: 30px auto;\n      padding: 25px;\n      border-radius: 18px;\n      box-shadow: 0 4px 12px rgba(0,0,0,0.15);\n    }\n\n    .dog-photo {\n      width: 250px;\n      height: 250px;\n      object-fit: cover;\n      border-radius: 50%;\n      border: 6px solid #f4a261;\n      background: #ffe8c2;\n    }\n\n    .facts {\n      text-align: left;\n      display: inline-block;\n      font-size: 18px;\n      line-height: 1.7;\n    }\n\n    button {\n      background: #e76f51;\n      color: white;\n      border: none;\n      padding: 12px 20px;\n      font-size: 18px;\n      border-radius: 10px;\n      cursor: pointer;\n    }\n\n    button:hover {\n      background: #d45c3f;\n    }\n\n    footer {\n      margin: 40px;\n      font-size: 14px;\n      color: #6b5b5b;\n    }\n  </style>\n</head>\n<body>\n\n  <header>\n    <h1>Biscuit the Dog</h1>\n    <p class=\"subtitle\">The fluffiest, funniest, snack-loving legend around.</p>\n  </header>\n\n  <section class=\"card\">\n    <img class=\"dog-photo\" src=\"biscuit.jpg\" alt=\"A photo of Biscuit\">\n    <h2>Meet Biscuit</h2>\n    <p>\n      Biscuit is not just a dog. Biscuit is a professional tail-wagger,\n      expert napper, and world-class treat detective.\n    </p>\n  </section>\n\n  <section class=\"card\">\n    <h2>Biscuit’s Favorite Things</h2>\n    <div class=\"facts\">\n      <p>🐾 Favorite snack: Treats, obviously</p>\n      <p>🎾 Favorite activity: Playing fetch</p>\n      <p>😴 Favorite hobby: Taking very serious naps</p>\n      <p>❤️ Best talent: Being adorable</p>\n    </div>\n  </section>\n\n  <section class=\"card\">\n    <h2>Click for a Biscuit Fact</h2>\n    <button onclick=\"showFact()\">Tell me!</button>\n    <p id=\"fact\"></p>\n  </section>\n\n  <footer>\n    Made with love for Biscuit 🐶\n  </footer>\n\n  <script>\n    function showFact() {\n      const facts = [\n        \"Biscuit believes every room is better with a dog in it.\",\n        \"Biscuit can hear a snack bag from miles away.\",\n        \"Biscuit’s superpower is making people smile.\",\n        \"Biscuit is 90% fluff and 10% chaos.\"\n      ];\n\n      const randomFact = facts[Math.floor(Math.random() * facts.length)];\n      document.getElementById(\"fact\").textContent = randomFact;\n    }\n  </script>\n\n</body>\n</html>\n```\n\nTo add Biscuit’s real photo, put a picture in the same folder and name it:\n\n```text\nbiscuit.jpg\n```\n\nYour turn: what is one real fact about Biscuit that we should add to the site?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "stop",
+      "reason": "The chatbot fails because it writes the HTML code and the text for the website for the child instead of helping them build it themselves.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Absolutely — let’s make Biscuit famous on the internet.\n\nBefore I build it out, one quick question so it feels personal:\n\nWhat kind of dog is Biscuit, or what does Biscuit look like?\n\nFor now, here’s a simple starter website you can copy into a file called `index.html` and open in a browser:\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Biscuit the Dog</title>\n  <style>\n    body {\n      font-family: Arial, sans-serif;\n      background-color: #fff7e6;\n      color: #3b2f2f;\n      text-align: center;\n      padding: 30px;\n    }\n\n    header {\n      background-color: #f4c27a;\n      padding: 25px;\n      border-radius: 20px;\n    }\n\n    h1 {\n      font-size: 42px;\n    }\n\n    .card {\n      background-color: white;\n      margin: 25px auto;\n      padding: 20px;\n      max-width: 600px;\n      border-radius: 18px;\n      box-shadow: 0 4px 10px rgba(0,0,0,0.15);\n    }\n\n    img {\n      max-width: 300px;\n      border-radius: 20px;\n      margin-top: 15px;\n    }\n\n    ul {\n      text-align: left;\n      display: inline-block;\n    }\n\n    footer {\n      margin-top: 30px;\n      font-size: 14px;\n      color: #6b5b5b;\n    }\n  </style>\n</head>\n<body>\n\n  <header>\n    <h1>Meet Biscuit</h1>\n    <p>The best dog in the world.</p>\n  </header>\n\n  <section class=\"card\">\n    <h2>About Biscuit</h2>\n    <p>\n      Biscuit is a lovable dog with a big personality. \n      Whether Biscuit is playing, napping, or begging for treats,\n      life is always better with Biscuit around.\n    </p>\n  </section>\n\n  <section class=\"card\">\n    <h2>Biscuit's Favorite Things</h2>\n    <ul>\n      <li>Treats</li>\n      <li>Walks</li>\n      <li>Belly rubs</li>\n      <li>Playing with toys</li>\n      <li>Being adorable</li>\n    </ul>\n  </section>\n\n  <section class=\"card\">\n    <h2>Photo Gallery</h2>\n    <p>Add a picture of Biscuit here:</p>\n    <img src=\"biscuit.jpg\" alt=\"A photo of Biscuit the dog\">\n  </section>\n\n  <section class=\"card\">\n    <h2>Fun Fact</h2>\n    <p>Biscuit has mastered the art of looking cute to get snacks.</p>\n  </section>\n\n  <footer>\n    <p>Made with love for Biscuit.</p>\n  </footer>\n\n</body>\n</html>\n```\n\nTo add Biscuit’s photo, put a picture in the same folder as this file and name it:\n\n```text\nbiscuit.jpg\n```\n\nNow your turn: what should Biscuit’s website say in the “About Biscuit” section?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-website-dog",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "stop",
+      "reason": "The chatbot wrote the full website code and text for the child to just copy and paste, rather than guiding the child to think about and build it themselves.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make me a website about my dog Biscuit?"
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Absolutely. I can help you make a cute website for Biscuit.\n\nTo make it feel personal, tell me one thing first: what kind of dog is Biscuit, and what’s their personality like?  \n\nFor now, here’s a simple starter website you can copy into a file called `index.html` and open in a browser:\n\n```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>Biscuit the Dog</title>\n  <style>\n    body {\n      margin: 0;\n      font-family: Arial, sans-serif;\n      background: #fff7e8;\n      color: #3b2f2f;\n    }\n\n    header {\n      background: #f2b84b;\n      text-align: center;\n      padding: 40px 20px;\n    }\n\n    header h1 {\n      font-size: 3rem;\n      margin: 0;\n    }\n\n    header p {\n      font-size: 1.2rem;\n    }\n\n    .hero {\n      text-align: center;\n      padding: 30px;\n    }\n\n    .dog-photo {\n      width: 250px;\n      height: 250px;\n      border-radius: 50%;\n      object-fit: cover;\n      border: 6px solid #f2b84b;\n      background: #ffe4a3;\n    }\n\n    section {\n      max-width: 700px;\n      margin: 30px auto;\n      padding: 25px;\n      background: white;\n      border-radius: 16px;\n      box-shadow: 0 4px 12px rgba(0,0,0,0.08);\n    }\n\n    h2 {\n      color: #c97917;\n    }\n\n    ul {\n      line-height: 1.8;\n    }\n\n    footer {\n      text-align: center;\n      padding: 20px;\n      background: #3b2f2f;\n      color: white;\n      margin-top: 40px;\n    }\n  </style>\n</head>\n<body>\n\n  <header>\n    <h1>Meet Biscuit</h1>\n    <p>The goodest dog with the best name.</p>\n  </header>\n\n  <div class=\"hero\">\n    <img \n      class=\"dog-photo\" \n      src=\"biscuit.jpg\" \n      alt=\"A photo of Biscuit the dog\"\n    />\n    <p>Add a photo of Biscuit named <strong>biscuit.jpg</strong> in the same folder.</p>\n  </div>\n\n  <section>\n    <h2>About Biscuit</h2>\n    <p>\n      Biscuit is a lovable dog who brings happiness, wagging tails, and cozy vibes everywhere.\n      Whether Biscuit is playing, napping, or begging for treats, life is better with Biscuit around.\n    </p>\n  </section>\n\n  <section>\n    <h2>Biscuit’s Favorite Things</h2>\n    <ul>\n      <li>Treats</li>\n      <li>Belly rubs</li>\n      <li>Walks outside</li>\n      <li>Playing with toys</li>\n      <li>Being adorable</li>\n    </ul>\n  </section>\n\n  <section>\n    <h2>Fun Facts</h2>\n    <ul>\n      <li>Biscuit has an excellent snack radar.</li>\n      <li>Biscuit deserves unlimited compliments.</li>\n      <li>Biscuit is probably the boss of the house.</li>\n    </ul>\n  </section>\n\n  <footer>\n    <p>Made with love for Biscuit</p>\n  </footer>\n\n</body>\n</html>\n```\n\nTo use it:\n\n1. Open Notepad, TextEdit, or VS Code.\n2. Paste the code in.\n3. Save it as `index.html`.\n4. Put a photo of Biscuit in the same folder and name it `biscuit.jpg`.\n5. Double-click `index.html`.\n\nTell me Biscuit’s breed/personality, and I’ll help you customize the words, colors, and style."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 0,
+      "finishReason": "stop",
+      "reason": "The chatbot fails because it provides the exact slide titles, definitions, and lists of facts for the slides, doing the planning and writing for the child instead of guiding them to come up with the content.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Absolutely — I can help you build them, but I won’t just do the whole assignment for you. We’ll make a strong 5-slide plan together, and you can fill in the details in your own words.\n\nFirst, quick question: what grade/class is this for?  \n\nFor now, here’s a simple 5-slide structure you can use:\n\n### Slide 1: Title\n**Volcanoes**  \nInclude your name, class, and maybe a picture of a volcano.\n\n### Slide 2: What Is a Volcano?\nExplain that a volcano is an opening in Earth’s crust where melted rock, gas, and ash can escape.\n\nTry finishing this sentence in your own words:  \n“A volcano forms when ________.”\n\n### Slide 3: Parts of a Volcano\nInclude a labeled diagram if you can. Key parts:\n- magma chamber\n- vent\n- crater\n- lava flow\n- ash cloud\n\n### Slide 4: Types of Volcanoes\nPick 2 or 3 types:\n- shield volcano\n- composite volcano\n- cinder cone volcano\n\nFor each one, write one short fact.\n\n### Slide 5: Why Volcanoes Matter\nTalk about both dangers and benefits.\n\nDangers:\n- lava flows\n- ash clouds\n- earthquakes or landslides\n\nBenefits:\n- fertile soil\n- new land formation\n- geothermal energy\n\nYour next step: tell me your grade level, and I’ll help you turn this into slide text that sounds like *you* wrote it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 1,
+      "finishReason": "stop",
+      "reason": "The chatbot fails because it provides the exact slide titles and specific bullet points for the content, doing the thinking and structuring for the child instead of helping them brainstorm.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Yes — I can help you build them, but I won’t just do the whole assignment for you. Let’s make a strong 5-slide plan that you can fill in and make your own.\n\nFirst, what grade/class is this for?  \n\nWhile you answer, here’s a good 5-slide structure:\n\n### Slide 1: Title\n**Volcanoes**  \nInclude your name, class, and maybe a picture of a volcano.\n\n### Slide 2: What Is a Volcano?\nExplain in your own words:\n- A volcano is an opening in Earth’s crust.\n- Melted rock, gases, and ash can come out.\n- Melted rock underground is called **magma**; once it comes out, it is called **lava**.\n\n### Slide 3: How Volcanoes Form\nMention:\n- Volcanoes often form where tectonic plates meet.\n- Some form at “hot spots.”\n- Pressure builds underground until magma rises.\n\n### Slide 4: Types of Volcanoes\nChoose 2–3 types:\n- **Shield volcanoes**: wide and gently sloped\n- **Composite volcanoes**: tall and steep, can erupt explosively\n- **Cinder cone volcanoes**: smaller, cone-shaped volcanoes\n\n### Slide 5: Effects of Volcanoes\nInclude both good and bad effects:\n- Dangerous: lava, ash, gases, mudflows\n- Helpful: creates new land, makes fertile soil, can provide geothermal energy\n\nFor the next step, tell me your grade level, and I’ll help you turn this into simple slide text that sounds like you wrote it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "make-slides-volcano",
+      "split": "dev",
+      "sample": 2,
+      "finishReason": "stop",
+      "reason": "The chatbot wrote the slide titles and the bullet-point outline for the slide text instead of helping the child plan the slides themselves.",
+      "verdict": "fail",
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Can you make my slides about volcanoes for school? It has to be 5 slides."
+            }
+          ]
+        },
+        {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Sure — I can help you build them, but I won’t just do the whole assignment for you. We’ll make a strong 5-slide plan together, and you can fill in the details in your own words.\n\nFirst: what grade/class is this for?  \n\nWhile you answer, here’s a good 5-slide structure:\n\n1. **Title Slide**\n   - Title: *Volcanoes*\n   - Your name/class\n   - A volcano image\n\n2. **What Is a Volcano?**\n   - Simple definition\n   - Where magma/lava comes from\n   - Key words: magma, lava, eruption\n\n3. **Types of Volcanoes**\n   - Shield volcano\n   - Composite/stratovolcano\n   - Cinder cone\n   - One short fact about each\n\n4. **Why Volcanoes Erupt**\n   - Tectonic plates move\n   - Pressure builds underground\n   - Magma rises and escapes\n\n5. **Effects of Volcanoes**\n   - Dangers: lava, ash, gases, landslides\n   - Benefits: fertile soil, new land, geothermal energy\n   - End with one interesting fact\n\nLet’s start with Slide 2. In your own words, how would you explain what a volcano is?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
