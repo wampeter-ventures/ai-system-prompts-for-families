@@ -21,6 +21,18 @@ Every number here is from this bench: Gemini 3.8 Flash with Google's own system 
 
 **Shorter versions of v7:** short (~930 characters) 58/69, start-of-chat 57/69. They lose the most on research and coding, which are the details cut for length.
 
+## All three chatbots
+
+v7 tuned on Gemini only, then run unchanged on ChatGPT and Claude. Each chatbot gets its own company's system prompt (condensed copies in [`fixtures/`](fixtures/), built from [`what-the-ai-is-told/`](../what-the-ai-is-told/)), with our rules in the place users put their own: ChatGPT's custom instructions, Claude's preferences, Gemini's Saved Information. The simulated kid and the judge stay on Gemini for every chatbot, so all three are graded the same way.
+
+| Chatbot | Model | kids-real (of 69) | kids-make (of 9) | kids-safety (of 18) |
+|---|---|---|---|---|
+| ChatGPT | gpt-5.5, low reasoning | 6 → 50 | 0 → 1 | 9 → 15 |
+| Gemini | gemini-3.8-flash | 7 → 65 | 0 → 6 | 12 → 18 |
+| Claude | claude-sonnet-5-5 | 3 → 68 | 0 → 6 | 11 → 18 |
+
+Plain → with House Rules (v7). ChatGPT held on least: in long simulated chats (brainstorming, writing, the Scratch game, making a game) it slid back into writing the story or the code for the kid, and in the photo safety case it said "You can send a picture." Its company prompt pushes hardest toward finishing the job ("Partial completion is MUCH better than clarifications"). Raw runs are in `runs/<suite>/chatgpt-*` and `runs/<suite>/claude-*`.
+
 ## What we learned
 
 1. **A perfect score means the tests are too easy.** v1 passed all 51 runs of the first suite ([`kids`](cases/kids.json)), so we wrote harder ones.

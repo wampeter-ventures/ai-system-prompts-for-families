@@ -18,7 +18,8 @@
 //   --mode=first-message    our prompt is pasted as the first chat message
 //   --samples=3             runs per case (chatbots answer differently each time)
 //   --split=all|dev|holdout which cases to run
-//   --subject=gemini-3.8-flash
+//   --platform=gemini       gemini | chatgpt | claude: which chatbot, with its own company prompt
+//   --subject=gemini-3.8-flash  (defaults: gpt-5.5 for chatgpt, claude-sonnet-5-5 for claude)
 //   --judge=gemini-3.1-pro-preview
 //   --kid=gemini-3.6-flash  plays the child in cases with a "sim" persona
 
@@ -37,7 +38,9 @@ const LABEL = args.label || path.basename(PROMPT_PATH, '.txt');
 const MODE = args.mode || 'saved-info';
 const SAMPLES = Number.parseInt(args.samples || '3', 10);
 const SPLIT = args.split || 'all';
-const SUBJECT = args.subject || 'gemini-3.8-flash';
+const PLATFORM = args.platform || 'gemini';
+if (!['gemini', 'chatgpt', 'claude'].includes(PLATFORM)) throw new Error('--platform must be gemini, chatgpt or claude');
+const SUBJECT = args.subject || { gemini: 'gemini-3.8-flash', chatgpt: 'gpt-5.5', claude: 'claude-sonnet-5-5' }[PLATFORM];
 const JUDGE = args.judge || 'gemini-3.1-pro-preview';
 const KID = args.kid || 'gemini-3.6-flash';
 const CONCURRENCY = Number.parseInt(args.concurrency || '6', 10);
@@ -49,14 +52,18 @@ if (!['saved-info', 'first-message'].includes(MODE)) throw new Error('--mode mus
 
 const root = path.dirname(new URL(import.meta.url).pathname);
 const suite = JSON.parse(fs.readFileSync(path.join(root, 'cases', `${SUITE}.json`), 'utf8'));
-const companyPrompt = fs.readFileSync(path.join(root, 'fixtures', 'gemini-system-prompt.txt'), 'utf8');
+const companyPrompt = fs.readFileSync(path.join(root, 'fixtures', `${PLATFORM}-system-prompt.txt`), 'utf8');
+if (PLATFORM !== 'gemini' && MODE !== 'saved-info') throw new Error('--mode=first-message is only wired up for gemini');
 const ourPrompt =
   PROMPT_PATH === 'none' ? null : fs.readFileSync(PROMPT_PATH, 'utf8').replaceAll("[age]", suite.age).replaceAll("[first name]", "Sam").trim();
 
 const systemText =
   MODE === 'saved-info' && ourPrompt
     ? companyPrompt.replace('[saved_info_placeholder]', ourPrompt)
-    : companyPrompt.replace('[saved_info_placeholder]', '(none)');
+    : PLATFORM === 'gemini'
+      ? companyPrompt.replace('[saved_info_placeholder]', '(none)')
+      : // ChatGPT and Claude leave the section out when the user hasn't written anything.
+        companyPrompt.slice(0, companyPrompt.lastIndexOf(PLATFORM === 'chatgpt' ? "# User's Instructions" : '<userPreferences>')).trim();
 
 async function gemini(model, body, attempt = 0) {
   let res;
@@ -84,17 +91,82 @@ async function gemini(model, body, attempt = 0) {
   return { text, finishReason: cand?.finishReason, usage: json.usageMetadata };
 }
 
+async function retrying(label, fn, attempt = 0) {
+  let res;
+  try {
+    res = await fn();
+  } catch (e) {
+    if (attempt >= 5) throw e;
+    await new Promise((r) => setTimeout(r, 2000 * 2 ** attempt));
+    return retrying(label, fn, attempt + 1);
+  }
+  if (res.status === 429 || res.status >= 500) {
+    if (attempt >= 5) throw new Error(`${label} ${res.status} after retries`);
+    await new Promise((r) => setTimeout(r, 2000 * 2 ** attempt));
+    return retrying(label, fn, attempt + 1);
+  }
+  const json = await res.json();
+  if (!res.ok) throw new Error(`${label} ${res.status}: ${JSON.stringify(json).slice(0, 300)}`);
+  return json;
+}
+
+// Token totals for the chatbot under test, printed at the end so a run's cost is visible.
+const spend = { calls: 0, input: 0, cachedInput: 0, cacheWrite: 0, output: 0 };
+function countTokens(u = {}) {
+  spend.calls++;
+  if (PLATFORM === 'chatgpt') {
+    spend.input += u.prompt_tokens || 0;
+    spend.cachedInput += u.prompt_tokens_details?.cached_tokens || 0;
+    spend.output += u.completion_tokens || 0;
+  } else if (PLATFORM === 'claude') {
+    spend.input += (u.input_tokens || 0) + (u.cache_read_input_tokens || 0) + (u.cache_creation_input_tokens || 0);
+    spend.cachedInput += u.cache_read_input_tokens || 0;
+    spend.cacheWrite += u.cache_creation_input_tokens || 0;
+    spend.output += u.output_tokens || 0;
+  } else {
+    spend.input += u.promptTokenCount || 0;
+    spend.output += (u.candidatesTokenCount || 0) + (u.thoughtsTokenCount || 0);
+  }
+}
+
+// The chatbot under test. Gemini takes the transcript as is; ChatGPT and Claude get it mapped to their roles.
+async function subject(contents) {
+  if (PLATFORM === 'gemini') return gemini(SUBJECT, { systemInstruction: { parts: [{ text: systemText }] }, contents });
+  const msgs = contents.map((m) => ({ role: m.role === 'model' ? 'assistant' : 'user', content: m.parts[0].text }));
+  if (PLATFORM === 'chatgpt') {
+    const json = await retrying(SUBJECT, () =>
+      fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', authorization: `Bearer ${process.env.OPENAI_API_KEY}` },
+        body: JSON.stringify({ model: SUBJECT, reasoning_effort: 'low', messages: [{ role: 'system', content: systemText }, ...msgs] }),
+      }),
+    );
+    return { text: json.choices[0].message.content || '', finishReason: json.choices[0].finish_reason, usage: json.usage };
+  }
+  const json = await retrying(SUBJECT, () =>
+    fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
+      // The company prompt is identical on every call, so it is cached.
+      body: JSON.stringify({ model: SUBJECT, max_tokens: 4096, system: [{ type: 'text', text: systemText, cache_control: { type: 'ephemeral' } }], messages: msgs }),
+    }),
+  );
+  const text = (json.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('');
+  return { text, finishReason: json.stop_reason, usage: json.usage };
+}
+
 async function playCase(c) {
   const contents = [];
   if (MODE === 'first-message' && ourPrompt) {
     contents.push({ role: 'user', parts: [{ text: ourPrompt }] });
-    const r = await gemini(SUBJECT, { systemInstruction: { parts: [{ text: systemText }] }, contents });
+    const r = await subject(contents);
     contents.push({ role: 'model', parts: [{ text: r.text }] });
   }
   let last;
   const talk = async (text) => {
     contents.push({ role: 'user', parts: [{ text }] });
-    last = await gemini(SUBJECT, { systemInstruction: { parts: [{ text: systemText }] }, contents });
+    last = await subject(contents);
+    countTokens(last.usage);
     contents.push({ role: 'model', parts: [{ text: last.text }] });
   };
   for (const turn of c.turns || []) await talk(turn);
@@ -171,7 +243,7 @@ async function pool(items, n, fn) {
 
 const cases = suite.cases.filter((c) => SPLIT === 'all' || c.split === SPLIT);
 const jobs = cases.flatMap((c) => Array.from({ length: SAMPLES }, (_, s) => ({ c, s })));
-console.log(`${SUITE}/${LABEL}: ${cases.length} cases × ${SAMPLES} samples, subject ${SUBJECT}, judge ${JUDGE}, mode ${MODE}`);
+console.log(`${SUITE}/${LABEL}: ${cases.length} cases × ${SAMPLES} samples, ${PLATFORM} ${SUBJECT}, judge ${JUDGE}, mode ${MODE}`);
 
 const results = await pool(jobs, CONCURRENCY, async ({ c, s }) => {
   try {
@@ -190,7 +262,7 @@ const outDir = path.join(root, 'runs', SUITE, LABEL);
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(
   path.join(outDir, 'results.json'),
-  JSON.stringify({ suite: SUITE, label: LABEL, prompt: PROMPT_PATH, mode: MODE, subject: SUBJECT, judge: JUDGE, samples: SAMPLES, ranAt: new Date().toISOString(), results }, null, 2),
+  JSON.stringify({ suite: SUITE, label: LABEL, prompt: PROMPT_PATH, mode: MODE, platform: PLATFORM, subject: SUBJECT, judge: JUDGE, samples: SAMPLES, ranAt: new Date().toISOString(), results }, null, 2),
 );
 
 const lines = [
@@ -221,4 +293,5 @@ lines.push('', `**${fmtT(ent.filter(([k]) => !k.startsWith('· ')))}**${errors ?
 if (ent.some(([k]) => k.startsWith('· '))) lines.push(`By use case: ${fmtT(ent.filter(([k]) => k.startsWith('· ')))}`, '');
 fs.writeFileSync(path.join(outDir, 'board.md'), lines.join('\n'));
 console.log(lines.join('\n'));
+console.log(`Chatbot tokens: ${JSON.stringify(spend)}`);
 if (errors) process.exitCode = 1;
